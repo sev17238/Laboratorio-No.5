@@ -16,4 +16,8 @@ public class RegistroTanques {
         tanquesRegion = new Tanque[10];
     }
     
+    public void nuevoTanqueCilindrico(){
+    
+    }
+    
 }
