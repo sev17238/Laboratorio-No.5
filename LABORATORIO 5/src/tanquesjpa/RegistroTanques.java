@@ -11,9 +11,10 @@ package tanquesjpa;
  */
 public class RegistroTanques {
     private Tanque[] tanquesRegion;
-    
+    private int prueba;
     public RegistroTanques(){
         tanquesRegion = new Tanque[10];
+        prueba = 0;
     }
     
     public void nuevoTanqueCilindrico(){
