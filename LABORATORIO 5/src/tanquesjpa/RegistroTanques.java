@@ -1,24 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tanquesjpa;
 
+package tanquesjpa;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
- * @author SDiego
+ * @author DiegoSevilla17238
+ * @author MarianaMorales17235
  */
 public class RegistroTanques {
     private Tanque[] tanquesRegion;
-    private int prueba;
+    
     public RegistroTanques(){
         tanquesRegion = new Tanque[10];
-        prueba = 0;
-    }
-    
-    public void nuevoTanqueCilindrico(){
     
     }
+    
+    public RegistroTanques(List<TCilindrico> cilindricos,List<TCubico> cubicos,List<TOrtogonal> ortogonales){
+        tanquesRegion = new Tanque[10];
+        Tanque tanq = new Tanque();
+        int count = 0;
+        for(int i=0;i<cilindricos.size();i++){
+            tanq = cilindricos.get(i);
+            tanquesRegion[count] = tanq;
+            count += 1;
+        }
+        for(int i=0;i<cubicos.size();i++){
+            tanq = cubicos.get(i);
+            tanquesRegion[count] = tanq;
+            count += 1;
+        }
+        for(int i=0;i<ortogonales.size();i++){
+            tanq = ortogonales.get(i);
+            tanquesRegion[count] = tanq;
+            count += 1;
+        }    
+    }
+    
+    
     
 }
