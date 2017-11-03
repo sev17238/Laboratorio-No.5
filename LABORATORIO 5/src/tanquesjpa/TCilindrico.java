@@ -19,7 +19,12 @@ public class TCilindrico extends Tanque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    
+    protected double radio;
+    protected double capacidad;
+    protected double volumentemp;
+    protected double volumenminimo;
+    
     @Override
     public Long getId() {
         return id;
@@ -54,5 +59,9 @@ public class TCilindrico extends Tanque implements Serializable {
     public String toString() {
         return "tanquesjpa.TCilindrico[ id=" + id + " ]";
     }
+    
+    
+    
+    
     
 }

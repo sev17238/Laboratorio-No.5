@@ -46,8 +46,9 @@ public class BaseDatosTanques {
         listatanques = new RegistroTanques(cilindricos,cubicos,ortogonales);
     }
     
-    public void nuevoTanqueCilindrico(){
+    public void nuevoTanqueCilindrico(String id,double altura,double radio){
         TCilindrico cil = new TCilindrico();
+        
         
     }
     

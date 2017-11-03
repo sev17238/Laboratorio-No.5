@@ -20,6 +20,13 @@ public class Tanque implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    
+    // atributos: 
+    protected String ID;
+    protected double altura;
+    protected Valvula[] valvulas;
+    
+    
     public Long getId() {
         return id;
     }
@@ -53,7 +60,42 @@ public class Tanque implements Serializable {
         return "tanquesjpa.Tanque[ id=" + id + " ]";
     }
     
+    public void setTanque(String ID,double altura){
+        this.ID = ID;
+        this.altura = altura;
+        
+        for(int i=0;i<valvulas.length;i++){
+            Valvula valv = new Valvula();            
+            valvulas[i] = valv;
+        }        
+    }
     
+    public double calcularVolumen(double altura){
+        double volumen = Math.pow(altura, 3);
+        return volumen;
+    }
+    
+    public void abrirValvulaCualquiera(int numvalvula){
+        //valvulas[numvalvula].cambiarEstado();
+    }
+    
+    public void cerrarValvulaCualquiera(int numvalvula){
+        //valvulas[numvalvula].cambiarEstado();
+    }
+    
+    public String getID(){
+        return ID;
+    }
+    
+    public Valvula[] getValvulas(){
+        return valvulas;
+    }
+    
+    public void cerrarValvulas(){
+        for(int i=0;i<valvulas.length;i++){            
+            //valvulas[i].cerrarValvula();            
+        }   
+    }
     
     
 }
