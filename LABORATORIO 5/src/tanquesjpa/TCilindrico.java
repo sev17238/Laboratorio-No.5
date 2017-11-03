@@ -21,9 +21,7 @@ public class TCilindrico extends Tanque implements Serializable {
     private Long id;
     
     protected double radio;
-    protected double capacidad;
-    protected double volumentemp;
-    protected double volumenminimo;
+    
     
     @Override
     public Long getId() {

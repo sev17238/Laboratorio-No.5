@@ -19,9 +19,7 @@ public class TCubico extends Tanque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    protected double capacidad;
-    protected double volumentemp;
-    protected double volumenminimo;
+   
 
     @Override
     public Long getId() {
@@ -62,22 +60,5 @@ public class TCubico extends Tanque implements Serializable {
         //super.setTanque(id, altura);
     }
     
-    public void decrementarVolumen(){
-        volumentemp = volumentemp - capacidad*0.05;
-    }
-    public double getCapacidad(){
-        return capacidad;
-    }
     
-    public double getVolumenTemporal(){
-        return volumentemp;
-    }
-    
-    public double getVolumenMinimo(){
-        return volumenminimo;
-    }
-    
-    public void reestablecerTanque(){
-        volumentemp = capacidad;
-    }
 }
