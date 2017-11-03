@@ -25,7 +25,9 @@ public class Tanque implements Serializable {
     protected String ID;
     protected double altura;
     protected Valvula[] valvulas;
-    
+    protected double capacidad;
+    protected double volumentemp;
+    protected double volumenminimo;
     
     public Long getId() {
         return id;
@@ -76,11 +78,11 @@ public class Tanque implements Serializable {
     }
     
     public void abrirValvulaCualquiera(int numvalvula){
-        //valvulas[numvalvula].cambiarEstado();
+        valvulas[numvalvula].cambiarEstado();
     }
     
     public void cerrarValvulaCualquiera(int numvalvula){
-        //valvulas[numvalvula].cambiarEstado();
+        valvulas[numvalvula].cambiarEstado();
     }
     
     public String getID(){
@@ -93,8 +95,28 @@ public class Tanque implements Serializable {
     
     public void cerrarValvulas(){
         for(int i=0;i<valvulas.length;i++){            
-            //valvulas[i].cerrarValvula();            
+            valvulas[i].cerrarValvula();            
         }   
+    }
+   //-------------------------------------
+    
+    public void decrementarVolumen(){
+        volumentemp = volumentemp - capacidad*0.05;
+    }
+    public double getCapacidad(){
+        return capacidad;
+    }
+    
+    public double getVolumenTemporal(){
+        return volumentemp;
+    }
+    
+    public double getVolumenMinimo(){
+        return volumenminimo;
+    }
+    
+    public void reestablecerTanque(){
+        volumentemp = capacidad;
     }
     
     

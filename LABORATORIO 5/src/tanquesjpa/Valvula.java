@@ -82,7 +82,10 @@ public class Valvula implements Serializable {
         }
         else{
             estado = false;
-        } 
-            
+        }            
+    }
+    
+    public void cerrarValvula(){
+        estado = false;
     }
 }

@@ -22,9 +22,7 @@ public class TOrtogonal extends Tanque implements Serializable {
     private Long id;
     protected double base;
     protected double largo;
-    protected double capacidad;
-    protected double volumentemp;
-    protected double volumenminimo;
+    
     
     @Override
     public Long getId() {
@@ -74,23 +72,5 @@ public class TOrtogonal extends Tanque implements Serializable {
         volumenminimo = volumen/4;
     }
     
-    public void decrementarVolumen(){
-        volumentemp = volumentemp - capacidad*0.05;
-    }
     
-    public double getCapacidad(){
-        return capacidad;
-    }
-    
-    public double getVolumenTemporal(){
-        return volumentemp;
-    }
-    
-    public double getVolumenMinimo(){
-        return volumenminimo;
-    }
-    
-    public void reestablecerTanque(){
-        volumentemp = capacidad;
-    }
 }

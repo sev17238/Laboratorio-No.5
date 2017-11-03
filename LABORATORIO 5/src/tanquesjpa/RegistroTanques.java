@@ -36,6 +36,15 @@ public class RegistroTanques {
         }    
     }
     
+    public double calcular_m3_disponibles(){
+        double volumentotal = 0;
+        Tanque tanq = new Tanque();
+        for(int i=0;i<tanquesRegion.length;i++){
+            tanq = tanquesRegion[i];
+            volumentotal = volumentotal + tanq.getVolumenTemporal();                    
+        }
+        return volumentotal;
+    }
     
     
 }
