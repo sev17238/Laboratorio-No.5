@@ -19,7 +19,10 @@ public class Valvula implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    //atributos:
+    protected boolean estado;
+    protected String municipio;
+    
     public Long getId() {
         return id;
     }
@@ -53,4 +56,30 @@ public class Valvula implements Serializable {
         return "tanquesjpa.Valvula[ id=" + id + " ]";
     }
     
+    public void setValvula(boolean estado, String municipio){
+        this.estado = estado;
+        this. municipio = municipio;
+    }
+    
+    public boolean getEstado(){
+        return estado;
+    }
+    
+    public String getMunicipio(){
+        return municipio;
+    }
+    
+    public void asignarMunicipio(String municipio){
+        this.municipio = municipio;
+    }
+    
+    public void cambiarEstado(){
+        if (estado==false){
+            estado = true;
+        }
+        else{
+            estado = false;
+        } 
+            
+    }
 }
