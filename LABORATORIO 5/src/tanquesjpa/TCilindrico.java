@@ -60,8 +60,34 @@ public class TCilindrico extends Tanque implements Serializable {
         return "tanquesjpa.TCilindrico[ id=" + id + " ]";
     }
     
+    public void setTCilindrico(String id, double altura, double radio){
+        super.setTanque(id, altura);
+    }
     
+    public void calcularVolumen(double altura, double radio){
+        double volumen = Math.PI* Math.pow(radio, 2)* altura;
+        capacidad = volumen;
+        volumentemp= volumen;
+        volumenminimo = volumen/4;
+    }
     
+    public void decrementarVolumen(){
+        volumentemp = volumentemp - capacidad*0.05;
+    }
     
+    public double getCapacidad(){
+        return capacidad;
+    }
     
+    public double getVolumenTemporal(){
+        return volumentemp;
+    }
+    
+    public double getVolumenMinimo(){
+        return volumenminimo;
+    }
+    
+    public void reestablecerTanque(){
+        volumentemp = capacidad;
+    }
 }

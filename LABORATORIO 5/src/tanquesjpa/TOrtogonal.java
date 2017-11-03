@@ -61,8 +61,8 @@ public class TOrtogonal extends Tanque implements Serializable {
         return "tanquesjpa.TOrtogonal[ id=" + id + " ]";
     }
     
-    public void setTOrtogonal(Long id, double base, double largo, double altura){
-        //super.setTanque(id, altura);
+    public void setTOrtogonal(String id, double base, double largo, double altura){
+        super.setTanque(id, altura);
         this.base = base;
         this.largo = largo;
     }

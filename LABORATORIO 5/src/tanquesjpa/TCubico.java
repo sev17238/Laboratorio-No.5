@@ -58,8 +58,8 @@ public class TCubico extends Tanque implements Serializable {
         return "tanquesjpa.TCubico[ id=" + id + " ]";
     }
     
-    public void setTCubico(Long id, double altura){
-        //super.setTanque(id, altura);
+    public void setTCubico(String id, double altura){
+        super.setTanque(id, altura);
     }
     
     public void decrementarVolumen(){
