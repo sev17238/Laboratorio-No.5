@@ -8,9 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 @Entity
 public class Valvula implements Serializable {
@@ -59,6 +59,14 @@ public class Valvula implements Serializable {
         return "tanquesjpa.Valvula[ id=" + id + " ]";
     }
     
+    /**
+     * Constructor for objects of class Valvula: Utilizado por la base de datos
+     */
+    public Valvula(){
+        this.estado = false;
+        this.municipio = "";
+    }
+    
     public void setValvula(boolean estado, String municipio){
         this.estado = estado;
         this. municipio = municipio;
@@ -76,13 +84,8 @@ public class Valvula implements Serializable {
         this.municipio = municipio;
     }
     
-    public void cambiarEstado(){
-        if (estado==false){
-            estado = true;
-        }
-        else{
-            estado = false;
-        }            
+    public void abrirValvula(){
+        estado = true;
     }
     
     public void cerrarValvula(){

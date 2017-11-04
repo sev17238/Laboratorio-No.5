@@ -8,9 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 @Entity
 public class TCilindrico extends Tanque implements Serializable {
@@ -57,6 +57,15 @@ public class TCilindrico extends Tanque implements Serializable {
     @Override
     public String toString() {
         return "tanquesjpa.TCilindrico[ id=" + id + " ]";
+    }
+    
+    /**
+     * Constructor for objects of class TCilindrico: Utilizado por la base de datos
+     */
+    public TCilindrico(){
+        super.setTanque("", 0);
+        this.radio = 0;
+        
     }
     
     public void setTCilindrico(String id, double altura, double radio){

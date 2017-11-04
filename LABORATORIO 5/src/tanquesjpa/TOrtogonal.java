@@ -8,9 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 @Entity
 public class TOrtogonal extends Tanque implements Serializable {
@@ -59,6 +59,15 @@ public class TOrtogonal extends Tanque implements Serializable {
     @Override
     public String toString() {
         return "tanquesjpa.TOrtogonal[ id=" + id + " ]";
+    }
+    
+    /**
+     * Constructor for objects of class TOrtogonal: Utilizado por la base de datos
+     */
+    public TOrtogonal(){
+        super.setTanque("", 0);
+        this.base = 0;
+        this.largo = 0;
     }
     
     public void setTOrtogonal(String id, double base, double largo, double altura){

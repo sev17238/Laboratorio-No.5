@@ -5,9 +5,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 public class BaseDatosTanques {
     RegistroTanques listatanques;
@@ -17,7 +17,7 @@ public class BaseDatosTanques {
     public BaseDatosTanques(){
         emf = javax.persistence.Persistence.createEntityManagerFactory("LABORATORIO_5PU");
         em = emf.createEntityManager();
-        listatanques = new RegistroTanques();
+        listatanques = new RegistroTanques(); //registro de tanques vacio
     }
     
     public void cerrarDB(){
@@ -42,26 +42,128 @@ public class BaseDatosTanques {
         Query q2 = em.createQuery("select c from TOrtogonal c");
         List<TOrtogonal> ortogonales = q2.getResultList();
         
-        // agregarlos a la universidad
+        // recuperar todas las valvulas de la base de datos:
+        //Query v = em.createQuery("select e from Valvula e");
+        //List<Valvula> valvulas = v.getResultList();
+        
+        // agregarlos a al registro de tanques.
         listatanques = new RegistroTanques(cilindricos,cubicos,ortogonales);
     }
     
     public void nuevoTanqueCilindrico(String id,double altura,double radio){
         TCilindrico cil = new TCilindrico();
         cil.setTCilindrico(id, altura, radio);
-        
-        
+        em.getTransaction().begin();
+        em.persist(cil);
+        em.getTransaction().commit();
+        listatanques.nuevoTanque(cil);        
     }
     
-    public void nuevoTanqueCubico(){
-        
+    public void nuevoTanqueCubico(String id,double altura){
+        TCubico cub = new TCubico();
+        cub.setTCubico(id, altura);
+        em.getTransaction().begin();
+        em.persist(cub);
+        em.getTransaction().commit();
+        listatanques.nuevoTanque(cub);
     }
     
-    public void nuevoTanqueOrtogonal(){
-        
+    public void nuevoTanqueOrtogonal(String id,double base,double largo,double altura){
+        TOrtogonal ort = new TOrtogonal();
+        ort.setTOrtogonal(id, base, largo, altura);
+        em.getTransaction().begin();
+        em.persist(ort);
+        em.getTransaction().commit();
+        listatanques.nuevoTanque(ort);
     }
     
     public RegistroTanques getListaTanques(){
         return listatanques;
+    }
+    
+    //-----------------------------------------------------------------
+    // Metodos para abrir valvulas en los 3 tipos de tanques que hay en la base de datos.
+    //-----------------------------------------------------------------
+    
+    public void abrirValvulaAlgunTanqueCil(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCilindrico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCilindrico cil = (TCilindrico) q.getSingleResult();
+        if(cil != null){
+            cil.abrirValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cil);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void abrirValvulaAlgunTanqueCub(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCubico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCubico cub = (TCubico) q.getSingleResult();
+        if(cub != null){
+            cub.abrirValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cub);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void abrirValvulaAlgunTanqueOrt(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
+        q.setParameter("id", ID);
+        TOrtogonal ort = (TOrtogonal) q.getSingleResult();
+        if(ort != null){
+            ort.abrirValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(ort);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    //-----------------------------------------------------------------
+    // Metodos para cerrar valvulas en los 3 tipos de tanques que hay en la base de datos.
+    //-----------------------------------------------------------------
+    
+    public void cerrarValvulaAlgunTanqueCil(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCilindrico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCilindrico cil = (TCilindrico) q.getSingleResult();
+        if(cil != null){
+            cil.cerrarValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cil);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void cerrarValvulaAlgunTanqueCub(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCubico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCubico cub = (TCubico) q.getSingleResult();
+        if(cub != null){
+            cub.cerrarValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cub);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void cerrarValvulaAlgunTanqueOrt(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
+        q.setParameter("id", ID);
+        TOrtogonal ort = (TOrtogonal) q.getSingleResult();
+        if(ort != null){
+            ort.cerrarValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(ort);
+            em.getTransaction().commit();
+        }        
     }
 }

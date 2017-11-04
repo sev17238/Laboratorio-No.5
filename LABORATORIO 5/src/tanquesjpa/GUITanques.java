@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tanquesjpa;
 
 /**
- *
- * @author marianam
+ * 
+ * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 public class GUITanques extends javax.swing.JFrame {
-
+    private BaseDatosTanques DB;
     /**
      * Creates new form GUITanques
      */
     public GUITanques() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
+        DB = new BaseDatosTanques();
     }
 
     /**

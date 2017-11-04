@@ -8,9 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 @Entity
 public class Tanque implements Serializable {
@@ -61,6 +61,10 @@ public class Tanque implements Serializable {
         return "tanquesjpa.Tanque[ id=" + id + " ]";
     }
     
+    public Tanque(){
+        
+    }
+    
     public void setTanque(String ID,double altura){
         this.ID = ID;
         this.altura = altura;
@@ -80,12 +84,14 @@ public class Tanque implements Serializable {
         return volumen;
     }
     
-    public void abrirValvulaCualquiera(int numvalvula){
-        valvulas[numvalvula].cambiarEstado();
-    }
     
+    
+    public void abrirValvulaCualquiera(int numvalvula){        
+        valvulas[numvalvula].abrirValvula();
+    }
+   
     public void cerrarValvulaCualquiera(int numvalvula){
-        valvulas[numvalvula].cambiarEstado();
+        valvulas[numvalvula].cerrarValvula();
     }
     
     public String getID(){

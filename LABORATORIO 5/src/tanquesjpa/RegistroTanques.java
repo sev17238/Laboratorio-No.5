@@ -1,11 +1,10 @@
 
 package tanquesjpa;
-import java.util.ArrayList;
 import java.util.List;
 /**
- *
- * @author DiegoSevilla17238
+ * 
  * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 public class RegistroTanques {
     private Tanque[] tanquesRegion;
@@ -22,17 +21,17 @@ public class RegistroTanques {
         for(int i=0;i<cilindricos.size();i++){
             tanq = cilindricos.get(i);
             tanquesRegion[count] = tanq;
-            count += 1;
+            count ++;
         }
         for(int i=0;i<cubicos.size();i++){
             tanq = cubicos.get(i);
             tanquesRegion[count] = tanq;
-            count += 1;
+            count ++;
         }
         for(int i=0;i<ortogonales.size();i++){
             tanq = ortogonales.get(i);
             tanquesRegion[count] = tanq;
-            count += 1;
+            count ++;
         }    
     }
     
@@ -88,4 +87,16 @@ public class RegistroTanques {
     public Tanque[] getTanquesRegion(){
         return tanquesRegion;
     }
+    
+    public void nuevoTanque(Tanque tanque){
+        Tanque tanq = new Tanque();
+        for(int i=0;i<tanquesRegion.length;i++){
+            tanq = tanquesRegion[i];
+            if(tanq == null){
+                tanquesRegion[i] = tanque;
+                break;
+            }
+        }        
+    }
+    
 }
