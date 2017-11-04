@@ -20,6 +20,7 @@ public class TCilindrico extends Tanque implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    //atributos
     protected double radio;
     
     
@@ -60,32 +61,22 @@ public class TCilindrico extends Tanque implements Serializable {
     
     public void setTCilindrico(String id, double altura, double radio){
         super.setTanque(id, altura);
-    }
-    
-    public void calcularVolumen(double altura, double radio){
-        double volumen = Math.PI* Math.pow(radio, 2)* altura;
+        double volumen = calcularVolumen(altura,radio);
         capacidad = volumen;
         volumentemp= volumen;
         volumenminimo = volumen/4;
+        
+    }
+    /**
+     * Metodo que calcula el volumen de un tanque cilindrico
+     * @param altura altura del tanque cilindrico
+     * @param radio radio del tanque cilindrico
+     * @return el volumen del tanque 
+     */
+    public double calcularVolumen(double altura, double radio){
+        double volumen = Math.PI* Math.pow(radio, 2)* altura;
+        return volumen;
     }
     
-    public void decrementarVolumen(){
-        volumentemp = volumentemp - capacidad*0.05;
-    }
-    
-    public double getCapacidad(){
-        return capacidad;
-    }
-    
-    public double getVolumenTemporal(){
-        return volumentemp;
-    }
-    
-    public double getVolumenMinimo(){
-        return volumenminimo;
-    }
-    
-    public void reestablecerTanque(){
-        volumentemp = capacidad;
-    }
+   
 }

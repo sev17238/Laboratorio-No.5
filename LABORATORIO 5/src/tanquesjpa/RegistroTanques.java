@@ -46,5 +46,46 @@ public class RegistroTanques {
         return volumentotal;
     }
     
+    public int cantidadValvulasCilindricos(){
+        int valvulasabiertas = 0;
+        Tanque tanq = new Tanque();
+        for(int i=0;i<tanquesRegion.length;i++){
+            tanq = tanquesRegion[i];
+            if(tanq instanceof TCilindrico){
+                Valvula valv = new Valvula();
+                for(int e=0;e<tanq.getValvulas().length;e++){
+                    valv = tanq.getValvulas()[e];
+                    if(valv.getEstado()==true){
+                        valvulasabiertas++; 
+                    }
+                }
+            }                    
+        }
+        return valvulasabiertas;
+    }
     
+    public String[] retornarListaIDTanques(){
+        int tanques = 0;
+        Tanque tanq = new Tanque();
+        for(int i=0;i<tanquesRegion.length;i++){
+            tanq = tanquesRegion[i];
+            if(tanq != null){
+                tanques++;
+            }
+        }        
+        String[] IDS = new String[tanques];
+        int m=0;
+        for(int i=0;i<tanquesRegion.length;i++){
+            tanq = tanquesRegion[i];
+            if(tanq != null){
+                IDS[m] = tanq.getID();
+                m++;
+            }
+        }
+        return IDS;
+    }
+        
+    public Tanque[] getTanquesRegion(){
+        return tanquesRegion;
+    }
 }

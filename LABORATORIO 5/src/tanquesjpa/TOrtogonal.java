@@ -20,6 +20,8 @@ public class TOrtogonal extends Tanque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    //atributos
     protected double base;
     protected double largo;
     
@@ -63,13 +65,21 @@ public class TOrtogonal extends Tanque implements Serializable {
         super.setTanque(id, altura);
         this.base = base;
         this.largo = largo;
-    }
-    
-    public void calcularVolumen(double altura, double base, double largo){
-        double volumen = base * largo * altura;
+        double volumen = calcularVolumen(altura,largo,base);
         capacidad = volumen;
         volumentemp= volumen;
         volumenminimo = volumen/4;
+    }
+    /**
+     * Metodo que calcula el volumen de un tanque ortogonal
+     * @param altura del tanque
+     * @param base del tanque
+     * @param largo del tanque
+     * @return el volumen del tanque ortogonal
+     */
+    public double calcularVolumen(double altura, double base, double largo){
+        double volumen = base * largo * altura;
+        return volumen;        
     }
     
     

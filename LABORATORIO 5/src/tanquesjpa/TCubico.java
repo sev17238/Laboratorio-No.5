@@ -20,6 +20,7 @@ public class TCubico extends Tanque implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
    
+    
 
     @Override
     public Long getId() {
@@ -58,7 +59,20 @@ public class TCubico extends Tanque implements Serializable {
     
     public void setTCubico(String id, double altura){
         super.setTanque(id, altura);
+        double volumen = calcularVolumen(altura);
+        capacidad = volumen;
+        volumentemp = volumen;
+        volumenminimo = volumen/4;
     }
-    
-    
+    /**
+     * Metodo que calcula el volumen de un tanque cubico con la ayuda de calcularVolumen de Tanque.
+     * @param altura
+     * @return 
+     */
+    @Override
+    public double calcularVolumen(double altura){
+        double volumen = super.calcularVolumen(altura);
+        return volumen;
+    }
+     
 }

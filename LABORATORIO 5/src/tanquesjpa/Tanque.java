@@ -20,7 +20,6 @@ public class Tanque implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //hola;
     // atributos: 
     protected String ID;
     protected double altura;
@@ -71,7 +70,11 @@ public class Tanque implements Serializable {
             valvulas[i] = valv;
         }        
     }
-    
+    /**
+     * Metodo que calcula el volumen de un tanque cubico.
+     * @param altura del tanque 
+     * @return volumen del tanque cubico
+     */
     public double calcularVolumen(double altura){
         double volumen = Math.pow(altura, 3);
         return volumen;

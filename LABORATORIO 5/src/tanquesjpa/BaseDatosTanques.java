@@ -48,6 +48,7 @@ public class BaseDatosTanques {
     
     public void nuevoTanqueCilindrico(String id,double altura,double radio){
         TCilindrico cil = new TCilindrico();
+        cil.setTCilindrico(id, altura, radio);
         
         
     }
