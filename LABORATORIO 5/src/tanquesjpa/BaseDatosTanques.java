@@ -10,9 +10,9 @@ import javax.persistence.Query;
  * @author DiegoSevilla17238
  */
 public class BaseDatosTanques {
-    RegistroTanques listatanques;
-    EntityManagerFactory emf;  // para especificar la Persistent Unit y conexion a la base de datos
-    EntityManager em; // manejador de las entidades en la base de datos
+    private RegistroTanques listatanques;
+    private EntityManagerFactory emf;  // para especificar la Persistent Unit y conexion a la base de datos
+    private EntityManager em; // manejador de las entidades en la base de datos
     
     public BaseDatosTanques(){
         emf = javax.persistence.Persistence.createEntityManagerFactory("LABORATORIO_5PU");
@@ -26,8 +26,8 @@ public class BaseDatosTanques {
     }
     
     /**
-     * Leer los trabajadores almacenados en la base de datos
-     * y colocarlos en la universidad
+     * Este metodo lee los tanques almacenados en la base de datos y los coloca
+     * en el registro de tanques.
      */
     public void recuperarTanques(){
         // recuperar todos los tanques cilindricos de la base de datos:
@@ -49,6 +49,10 @@ public class BaseDatosTanques {
         // agregarlos a al registro de tanques.
         listatanques = new RegistroTanques(cilindricos,cubicos,ortogonales);
     }
+    
+    //-----------------------------------------------------------------
+    // Metodos para crear nuevos tanques en el registro y en la base de datos.
+    //-----------------------------------------------------------------
     
     public void nuevoTanqueCilindrico(String id,double altura,double radio){
         TCilindrico cil = new TCilindrico();
@@ -82,7 +86,8 @@ public class BaseDatosTanques {
     }
     
     //-----------------------------------------------------------------
-    // Metodos para abrir valvulas en los 3 tipos de tanques que hay en la base de datos.
+    // Metodos para abrir alguna valvula en alguno de los 3 tipos de   
+    // tanques que hay en la base de datos.
     //-----------------------------------------------------------------
     
     public void abrirValvulaAlgunTanqueCil(String ID,int numvalvula){
@@ -125,7 +130,8 @@ public class BaseDatosTanques {
     }
     
     //-----------------------------------------------------------------
-    // Metodos para cerrar valvulas en los 3 tipos de tanques que hay en la base de datos.
+    // Metodos para cerrar alguna valvula en alguno de los 3 tipos de  
+    // tanques que hay en la base de datos.
     //-----------------------------------------------------------------
     
     public void cerrarValvulaAlgunTanqueCil(String ID,int numvalvula){
@@ -155,6 +161,24 @@ public class BaseDatosTanques {
     }
     
     public void cerrarValvulaAlgunTanqueOrt(String ID,int numvalvula){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
+        q.setParameter("id", ID);
+        TOrtogonal ort = (TOrtogonal) q.getSingleResult();
+        if(ort != null){
+            ort.cerrarValvulaCualquiera(numvalvula);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(ort);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    //-----------------------------------------------------------------
+    // Metodos para asignar un municipio a alguna de las valvulas de 
+    // cualquiera de los tres tipos de tanque.
+    //-----------------------------------------------------------------
+    
+    public void asignarMuniValvulaAlgunTanqueOrt(String ID,int numvalvula,String municipio){
         // recuperar de la base de datos un tanque con el ID dado:
         Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
         q.setParameter("id", ID);

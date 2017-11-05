@@ -67,7 +67,7 @@ public class Valvula implements Serializable {
         this.municipio = "";
     }
     
-    public void setValvula(boolean estado, String municipio){
+    public Valvula(boolean estado, String municipio){
         this.estado = estado;
         this. municipio = municipio;
     }

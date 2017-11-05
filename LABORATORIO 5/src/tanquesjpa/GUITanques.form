@@ -27,9 +27,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPanel3" max="32767" attributes="0"/>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <Component id="panelCubico" max="32767" attributes="0"/>
+                  <Component id="panelCilindrico" alignment="0" max="32767" attributes="0"/>
+                  <Component id="panelOrtogonal" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -38,7 +38,7 @@
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       <Component id="botonM3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="panelOperarTanques" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
@@ -50,7 +50,7 @@
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      <Component id="panelOperarTanques" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botonValvulasCil" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -58,11 +58,11 @@
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="panelCilindrico" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="jPanel2" min="-2" pref="165" max="-2" attributes="0"/>
+                      <Component id="panelOrtogonal" min="-2" pref="165" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jPanel3" min="-2" pref="115" max="-2" attributes="0"/>
+                      <Component id="panelCubico" min="-2" pref="115" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -71,7 +71,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="panelCilindrico">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -99,11 +99,9 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="tradio" pref="124" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tidcil" pref="124" max="32767" attributes="0"/>
-                                  <Component id="talturacil" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="tidcil" pref="133" max="32767" attributes="0"/>
+                              <Component id="talturacil" alignment="1" max="32767" attributes="0"/>
+                              <Component id="tradio" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -167,7 +165,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="panelOrtogonal">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -214,7 +212,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -287,7 +285,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel3">
+    <Container class="javax.swing.JPanel" name="panelCubico">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -305,12 +303,12 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField7" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="tidcub" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField8" min="-2" pref="130" max="-2" attributes="0"/>
+                          <Component id="talturacub" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="botonCubico" min="-2" max="-2" attributes="0"/>
@@ -327,12 +325,12 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tidcub" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="talturacub" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="botonCubico" min="-2" max="-2" attributes="0"/>
@@ -347,9 +345,9 @@
             <Property name="text" type="java.lang.String" value="ID:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="tidcub">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="talturacub">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -366,7 +364,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel4">
+    <Container class="javax.swing.JPanel" name="panelOperarTanques">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -380,17 +378,19 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="cboxRegistro" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="cboxRegistro" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jLabel11" min="-2" pref="63" max="-2" attributes="0"/>
+                      <Component id="panelOperarValvulas" alignment="0" max="32767" attributes="0"/>
+                      <Component id="panelMunicipio" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="bInfoTanque" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="labeltipo" min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -405,11 +405,14 @@
                       <Component id="cboxRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labeltipo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bInfoTanque" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="panelMunicipio" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                  <Component id="panelOperarValvulas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -421,12 +424,12 @@
             <Property name="text" type="java.lang.String" value="Tanques del registro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="labeltipo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="---------------"/>
+            <Property name="text" type="java.lang.String" value="     -----------------"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel5">
+        <Container class="javax.swing.JPanel" name="panelMunicipio">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -451,7 +454,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" min="-2" pref="151" max="-2" attributes="0"/>
+                                      <Component id="cboxMunicipios" min="-2" pref="151" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -475,7 +478,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cboxMunicipios" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botonAsignarValvula" min="-2" max="-2" attributes="0"/>
@@ -495,7 +498,7 @@
                 <Property name="text" type="java.lang.String" value="Municipio:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox3">
+            <Component class="javax.swing.JComboBox" name="cboxMunicipios">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
@@ -535,7 +538,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel6">
+        <Container class="javax.swing.JPanel" name="panelOperarValvulas">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -611,6 +614,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="bInfoTanque">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Info. Tanque"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInfoTanqueActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="botonM3">

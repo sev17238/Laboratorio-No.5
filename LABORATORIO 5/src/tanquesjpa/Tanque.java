@@ -84,14 +84,25 @@ public class Tanque implements Serializable {
         return volumen;
     }
     
-    
+    public boolean getEstadoAlgunaValvula(int numvalvula){  
+        if(valvulas[numvalvula-1].getEstado()==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     public void abrirValvulaCualquiera(int numvalvula){        
-        valvulas[numvalvula].abrirValvula();
+        valvulas[numvalvula-1].abrirValvula();
+        decrementarVolumen();
     }
    
     public void cerrarValvulaCualquiera(int numvalvula){
-        valvulas[numvalvula].cerrarValvula();
+        valvulas[numvalvula-1].cerrarValvula();
+    }
+    
+    public void asignarMunicipioValvulaCualquiera(){
+    
     }
     
     public String getID(){
