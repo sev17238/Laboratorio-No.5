@@ -24,40 +24,56 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="panelCubico" max="32767" attributes="0"/>
-                  <Component id="panelCilindrico" alignment="0" max="32767" attributes="0"/>
-                  <Component id="panelOrtogonal" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace pref="21" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="botonValvulasCil" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="botonM3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="bSalir" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="panelOperarTanques" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="panelCubico" max="32767" attributes="0"/>
+                          <Component id="panelCilindrico" alignment="0" max="32767" attributes="0"/>
+                          <Component id="panelOrtogonal" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="panelOperarTanques" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="bValvulasCil" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="bM3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="bReestablecer" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="bSalir" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="panelOperarTanques" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonValvulasCil" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonM3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bValvulasCil" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bM3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="bReestablecer" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="panelCilindrico" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="panelOrtogonal" min="-2" pref="165" max="-2" attributes="0"/>
@@ -65,7 +81,7 @@
                       <Component id="panelCubico" min="-2" pref="115" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,12 +99,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Component id="botonCilindrico" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="bCilindrico" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -128,7 +144,7 @@
                       <Component id="tradio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
-                  <Component id="botonCilindrico" min="-2" max="-2" attributes="0"/>
+                  <Component id="bCilindrico" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -149,12 +165,12 @@
             <Property name="text" type="java.lang.String" value="Radio:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonCilindrico">
+        <Component class="javax.swing.JButton" name="bCilindrico">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingresar tanque cilindrico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCilindricoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCilindricoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tidcil">
@@ -186,7 +202,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="botonOrtogonal" min="-2" max="-2" attributes="0"/>
+                          <Component id="bOrtogonal" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel7" min="-2" pref="31" max="-2" attributes="0"/>
@@ -240,7 +256,7 @@
                       <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonOrtogonal" min="-2" max="-2" attributes="0"/>
+                  <Component id="bOrtogonal" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -275,12 +291,12 @@
             <Property name="text" type="java.lang.String" value="Largo:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonOrtogonal">
+        <Component class="javax.swing.JButton" name="bOrtogonal">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingresar tanque ortogonal"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonOrtogonalActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bOrtogonalActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -311,11 +327,11 @@
                           <Component id="talturacub" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="botonCubico" min="-2" max="-2" attributes="0"/>
+                          <Component id="bCubico" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -333,7 +349,7 @@
                       <Component id="talturacub" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="botonCubico" min="-2" max="-2" attributes="0"/>
+                  <Component id="bCubico" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -354,12 +370,12 @@
             <Property name="text" type="java.lang.String" value="Altura:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botonCubico">
+        <Component class="javax.swing.JButton" name="bCubico">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingresar tanque cubico"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCubicoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCubicoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -387,7 +403,7 @@
                       <Component id="panelOperarValvulas" alignment="0" max="32767" attributes="0"/>
                       <Component id="panelMunicipio" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="bInfoTanque" min="-2" max="-2" attributes="0"/>
+                          <Component id="bInfo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="labeltipo" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
@@ -407,13 +423,13 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labeltipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="bInfoTanque" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="bInfo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="panelMunicipio" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="panelOperarValvulas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -460,7 +476,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                              <Component id="botonAsignarValvula" min="-2" max="-2" attributes="0"/>
+                              <Component id="bAsignarMunicipioValvula" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -481,7 +497,7 @@
                           <Component id="cboxMunicipios" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="botonAsignarValvula" min="-2" max="-2" attributes="0"/>
+                      <Component id="bAsignarMunicipioValvula" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -501,7 +517,20 @@
             <Component class="javax.swing.JComboBox" name="cboxMunicipios">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="12">
+                    <StringItem index="0" value="Guatemala"/>
+                    <StringItem index="1" value="Palencia"/>
+                    <StringItem index="2" value="Chinautla"/>
+                    <StringItem index="3" value="Mixco"/>
+                    <StringItem index="4" value="Quetzaltenango"/>
+                    <StringItem index="5" value="Almolonga"/>
+                    <StringItem index="6" value="Cantel"/>
+                    <StringItem index="7" value="Coatepeque"/>
+                    <StringItem index="8" value="Retalhuleu"/>
+                    <StringItem index="9" value="Champerico"/>
+                    <StringItem index="10" value="San Felipe"/>
+                    <StringItem index="11" value="El asintal"/>
+                  </StringArray>
                 </Property>
               </Properties>
               <AuxValues>
@@ -515,12 +544,12 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botonAsignarValvula">
+            <Component class="javax.swing.JButton" name="bAsignarMunicipioValvula">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Asignar municipio"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAsignarValvulaActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAsignarMunicipioValvulaActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -554,12 +583,12 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonAbrir" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAbrir" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="spinner2" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonCerrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="bCerrar" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -575,8 +604,8 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonAbrir" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="botonCerrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAbrir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bCerrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -584,20 +613,20 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="botonAbrir">
+            <Component class="javax.swing.JButton" name="bAbrir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Abrir"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAbrirActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAbrirActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="botonCerrar">
+            <Component class="javax.swing.JButton" name="bCerrar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cerrar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCerrarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCerrarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
@@ -614,30 +643,46 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="bInfoTanque">
+        <Component class="javax.swing.JButton" name="bInfo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Info. Tanque"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInfoTanqueActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInfoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="botonM3">
+    <Component class="javax.swing.JButton" name="bM3">
       <Properties>
         <Property name="text" type="java.lang.String" value="m3 disponibles"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonM3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bM3ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botonValvulasCil">
+    <Component class="javax.swing.JButton" name="bValvulasCil">
       <Properties>
         <Property name="text" type="java.lang.String" value="Valvulas Cilindricos"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonValvulasCilActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bValvulasCilActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bReestablecer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reestablecer Tanque"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bReestablecerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="bSalir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SALIR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSalirActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

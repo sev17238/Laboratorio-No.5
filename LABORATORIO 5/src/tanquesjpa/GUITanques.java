@@ -55,7 +55,7 @@ public final class GUITanques extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        botonCilindrico = new javax.swing.JButton();
+        bCilindrico = new javax.swing.JButton();
         tidcil = new javax.swing.JTextField();
         talturacil = new javax.swing.JTextField();
         tradio = new javax.swing.JTextField();
@@ -68,13 +68,13 @@ public final class GUITanques extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        botonOrtogonal = new javax.swing.JButton();
+        bOrtogonal = new javax.swing.JButton();
         panelCubico = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         tidcub = new javax.swing.JTextField();
         talturacub = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        botonCubico = new javax.swing.JButton();
+        bCubico = new javax.swing.JButton();
         panelOperarTanques = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         labeltipo = new javax.swing.JLabel();
@@ -83,16 +83,18 @@ public final class GUITanques extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         cboxMunicipios = new javax.swing.JComboBox<>();
         spinner1 = new javax.swing.JSpinner();
-        botonAsignarValvula = new javax.swing.JButton();
+        bAsignarMunicipioValvula = new javax.swing.JButton();
         cboxRegistro = new javax.swing.JComboBox<>();
         panelOperarValvulas = new javax.swing.JPanel();
-        botonAbrir = new javax.swing.JButton();
-        botonCerrar = new javax.swing.JButton();
+        bAbrir = new javax.swing.JButton();
+        bCerrar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         spinner2 = new javax.swing.JSpinner();
-        bInfoTanque = new javax.swing.JButton();
-        botonM3 = new javax.swing.JButton();
-        botonValvulasCil = new javax.swing.JButton();
+        bInfo = new javax.swing.JButton();
+        bM3 = new javax.swing.JButton();
+        bValvulasCil = new javax.swing.JButton();
+        bReestablecer = new javax.swing.JButton();
+        bSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Acueducto de Albear");
@@ -105,10 +107,10 @@ public final class GUITanques extends javax.swing.JFrame {
 
         jLabel3.setText("Radio:");
 
-        botonCilindrico.setText("Ingresar tanque cilindrico");
-        botonCilindrico.addActionListener(new java.awt.event.ActionListener() {
+        bCilindrico.setText("Ingresar tanque cilindrico");
+        bCilindrico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCilindricoActionPerformed(evt);
+                bCilindricoActionPerformed(evt);
             }
         });
 
@@ -120,8 +122,8 @@ public final class GUITanques extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelCilindricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCilindricoLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(botonCilindrico)
+                        .addGap(10, 10, 10)
+                        .addComponent(bCilindrico)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelCilindricoLayout.createSequentialGroup()
                         .addGroup(panelCilindricoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +153,7 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(tradio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addComponent(botonCilindrico))
+                .addComponent(bCilindrico))
         );
 
         panelOrtogonal.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevo tanque ortogonal"));
@@ -164,10 +166,10 @@ public final class GUITanques extends javax.swing.JFrame {
 
         jLabel7.setText("Largo:");
 
-        botonOrtogonal.setText("Ingresar tanque ortogonal");
-        botonOrtogonal.addActionListener(new java.awt.event.ActionListener() {
+        bOrtogonal.setText("Ingresar tanque ortogonal");
+        bOrtogonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonOrtogonalActionPerformed(evt);
+                bOrtogonalActionPerformed(evt);
             }
         });
 
@@ -180,7 +182,7 @@ public final class GUITanques extends javax.swing.JFrame {
                 .addGroup(panelOrtogonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelOrtogonalLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(botonOrtogonal))
+                        .addComponent(bOrtogonal))
                     .addGroup(panelOrtogonalLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -220,7 +222,7 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(tlargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonOrtogonal)
+                .addComponent(bOrtogonal)
                 .addGap(24, 24, 24))
         );
 
@@ -230,10 +232,10 @@ public final class GUITanques extends javax.swing.JFrame {
 
         jLabel9.setText("Altura:");
 
-        botonCubico.setText("Ingresar tanque cubico");
-        botonCubico.addActionListener(new java.awt.event.ActionListener() {
+        bCubico.setText("Ingresar tanque cubico");
+        bCubico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCubicoActionPerformed(evt);
+                bCubicoActionPerformed(evt);
             }
         });
 
@@ -253,9 +255,9 @@ public final class GUITanques extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(talturacub, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCubicoLayout.createSequentialGroup()
-                        .addComponent(botonCubico)
+                        .addComponent(bCubico)
                         .addGap(10, 10, 10)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelCubicoLayout.setVerticalGroup(
             panelCubicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +271,7 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(talturacub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botonCubico)
+                .addComponent(bCubico)
                 .addGap(18, 18, 18))
         );
 
@@ -285,12 +287,14 @@ public final class GUITanques extends javax.swing.JFrame {
 
         jLabel13.setText("Municipio:");
 
+        cboxMunicipios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Guatemala", "Palencia", "Chinautla", "Mixco", "Quetzaltenango", "Almolonga", "Cantel", "Coatepeque", "Retalhuleu", "Champerico", "San Felipe", "El asintal" }));
+
         spinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
-        botonAsignarValvula.setText("Asignar municipio");
-        botonAsignarValvula.addActionListener(new java.awt.event.ActionListener() {
+        bAsignarMunicipioValvula.setText("Asignar municipio");
+        bAsignarMunicipioValvula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAsignarValvulaActionPerformed(evt);
+                bAsignarMunicipioValvulaActionPerformed(evt);
             }
         });
 
@@ -313,7 +317,7 @@ public final class GUITanques extends javax.swing.JFrame {
                                 .addComponent(cboxMunicipios, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelMunicipioLayout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addComponent(botonAsignarValvula)))
+                        .addComponent(bAsignarMunicipioValvula)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelMunicipioLayout.setVerticalGroup(
@@ -328,7 +332,7 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(jLabel13)
                     .addComponent(cboxMunicipios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(botonAsignarValvula)
+                .addComponent(bAsignarMunicipioValvula)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -340,17 +344,17 @@ public final class GUITanques extends javax.swing.JFrame {
 
         panelOperarValvulas.setBorder(javax.swing.BorderFactory.createTitledBorder("Operar valvulas"));
 
-        botonAbrir.setText("Abrir");
-        botonAbrir.addActionListener(new java.awt.event.ActionListener() {
+        bAbrir.setText("Abrir");
+        bAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAbrirActionPerformed(evt);
+                bAbrirActionPerformed(evt);
             }
         });
 
-        botonCerrar.setText("Cerrar");
-        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+        bCerrar.setText("Cerrar");
+        bCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCerrarActionPerformed(evt);
+                bCerrarActionPerformed(evt);
             }
         });
 
@@ -366,11 +370,11 @@ public final class GUITanques extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(panelOperarValvulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel14)
-                    .addComponent(botonAbrir))
+                    .addComponent(bAbrir))
                 .addGap(27, 27, 27)
                 .addGroup(panelOperarValvulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(spinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCerrar))
+                    .addComponent(bCerrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelOperarValvulasLayout.setVerticalGroup(
@@ -382,15 +386,15 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(jLabel14))
                 .addGap(18, 18, 18)
                 .addGroup(panelOperarValvulasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonAbrir)
-                    .addComponent(botonCerrar))
+                    .addComponent(bAbrir)
+                    .addComponent(bCerrar))
                 .addContainerGap())
         );
 
-        bInfoTanque.setText("Info. Tanque");
-        bInfoTanque.addActionListener(new java.awt.event.ActionListener() {
+        bInfo.setText("Info. Tanque");
+        bInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bInfoTanqueActionPerformed(evt);
+                bInfoActionPerformed(evt);
             }
         });
 
@@ -408,7 +412,7 @@ public final class GUITanques extends javax.swing.JFrame {
                     .addComponent(panelOperarValvulas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelMunicipio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelOperarTanquesLayout.createSequentialGroup()
-                        .addComponent(bInfoTanque)
+                        .addComponent(bInfo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labeltipo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -423,25 +427,39 @@ public final class GUITanques extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelOperarTanquesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labeltipo)
-                    .addComponent(bInfoTanque))
+                    .addComponent(bInfo))
                 .addGap(23, 23, 23)
                 .addComponent(panelMunicipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelOperarValvulas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        botonM3.setText("m3 disponibles");
-        botonM3.addActionListener(new java.awt.event.ActionListener() {
+        bM3.setText("m3 disponibles");
+        bM3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonM3ActionPerformed(evt);
+                bM3ActionPerformed(evt);
             }
         });
 
-        botonValvulasCil.setText("Valvulas Cilindricos");
-        botonValvulasCil.addActionListener(new java.awt.event.ActionListener() {
+        bValvulasCil.setText("Valvulas Cilindricos");
+        bValvulasCil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonValvulasCilActionPerformed(evt);
+                bValvulasCilActionPerformed(evt);
+            }
+        });
+
+        bReestablecer.setText("Reestablecer Tanque");
+        bReestablecer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bReestablecerActionPerformed(evt);
+            }
+        });
+
+        bSalir.setText("SALIR");
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
             }
         });
 
@@ -449,39 +467,51 @@ public final class GUITanques extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelCubico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelCilindrico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelOrtogonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonValvulasCil)
-                        .addGap(72, 72, 72)
-                        .addComponent(botonM3))
-                    .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bSalir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(panelCubico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelCilindrico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(panelOrtogonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bValvulasCil)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bM3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(bReestablecer)))))
+                .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bSalir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botonValvulasCil)
-                            .addComponent(botonM3)))
+                            .addComponent(bValvulasCil)
+                            .addComponent(bM3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bReestablecer))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(panelCilindrico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
                         .addComponent(panelOrtogonal, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(panelCubico, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         panelOrtogonal.getAccessibleContext().setAccessibleName("");
@@ -490,7 +520,7 @@ public final class GUITanques extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonCilindricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCilindricoActionPerformed
+    private void bCilindricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCilindricoActionPerformed
         // TODO add your handling code here:
         String id = tidcil.getText();
         String altura = talturacil.getText();
@@ -505,9 +535,9 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cilindrico exitosamente.", "Tanque Cilindrico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-    }//GEN-LAST:event_botonCilindricoActionPerformed
+    }//GEN-LAST:event_bCilindricoActionPerformed
 
-    private void botonOrtogonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOrtogonalActionPerformed
+    private void bOrtogonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOrtogonalActionPerformed
         // TODO add your handling code here:
         String id = tidort.getText();
         String altura = talturaort.getText();
@@ -524,9 +554,9 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque ortogonal exitosamente.", "Tanque Ortogonal Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-    }//GEN-LAST:event_botonOrtogonalActionPerformed
+    }//GEN-LAST:event_bOrtogonalActionPerformed
 
-    private void botonCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCubicoActionPerformed
+    private void bCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCubicoActionPerformed
         // TODO add your handling code here:
         String id = tidcub.getText();
         String altura = talturacub.getText();
@@ -539,7 +569,7 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cubico exitosamente.", "Tanque Cubico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-    }//GEN-LAST:event_botonCubicoActionPerformed
+    }//GEN-LAST:event_bCubicoActionPerformed
 
     private void cboxRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxRegistroActionPerformed
         // TODO add your handling code here:
@@ -554,44 +584,63 @@ public final class GUITanques extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cboxRegistroActionPerformed
 
-    private void botonAsignarValvulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAsignarValvulaActionPerformed
+    private void bAsignarMunicipioValvulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAsignarMunicipioValvulaActionPerformed
         // TODO add your handling code here:
         String ID = cboxRegistro.getSelectedItem().toString();
         String numvalvulaStr = spinner1.getValue().toString();
         String municipio = cboxMunicipios.getSelectedItem().toString();
-        
         int numvalvula = Integer.parseInt(numvalvulaStr);
         
-    }//GEN-LAST:event_botonAsignarValvulaActionPerformed
+        Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
+        
+        if(tanq instanceof TCilindrico){
+            DB.asignarMuniValvulaTanqueCil(ID, numvalvula, municipio);
+        }else if(tanq instanceof TCubico){
+            DB.asignarMuniValvulaTanqueCub(ID, numvalvula, municipio);
+        }else if(tanq instanceof TOrtogonal){
+            DB.asignarMuniValvulaTanqueOrt(ID, numvalvula, municipio);
+        }
+        JOptionPane.showMessageDialog(null, "Asignacion de municipio a valvula exitosa.", "", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bAsignarMunicipioValvulaActionPerformed
 
-    private void botonAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAbrirActionPerformed
+    private void bAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAbrirActionPerformed
         // TODO add your handling code here:
         String ID = cboxRegistro.getSelectedItem().toString();
         String numvalvulaStr = spinner2.getValue().toString();
         int numvalvula = Integer.parseInt(numvalvulaStr);
         boolean estadovalv = DB.getListaTanques().getTanqueBuscado(ID).getEstadoAlgunaValvula(numvalvula);  
         Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
-        //Variables que almacenan algunas especificaciones del tanque.
-        double cap = tanq.getCapacidad();
+        //Variables que representan algunas especificaciones del tanque.
         double temp = tanq.getVolumenTemporal();
         double min = tanq.getVolumenMinimo();
-        
         
         if(estadovalv == true){
             JOptionPane.showMessageDialog(null, "Esta valvula ya esta ABIERTA.", "Valvula Abierta", JOptionPane.INFORMATION_MESSAGE);
         }else{
-            if(tanq instanceof TCilindrico){
-                DB.abrirValvulaAlgunTanqueCil(ID, numvalvula);
-            }else if(tanq instanceof TCubico){
-                DB.abrirValvulaAlgunTanqueCub(ID, numvalvula);
-            }else if(tanq instanceof TOrtogonal){
-                DB.abrirValvulaAlgunTanqueOrt(ID, numvalvula);
+            if(temp <= min){        
+                if(tanq instanceof TCilindrico){
+                    DB.cerrarTodasValvulasTanqueCil(ID);
+                }else if(tanq instanceof TCubico){
+                    DB.cerrarTodasValvulasTanqueCub(ID);
+                }else if(tanq instanceof TOrtogonal){
+                    DB.cerrarTodasValvulasTanqueOrt(ID);
+                }
+                JOptionPane.showMessageDialog(null, "La cantidad de liquido actual del tanque es menor al 25% de su capacidad"
+                        + "por lo que todas sus valvulas se han cerrado.", "Valvula Abierta", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                if(tanq instanceof TCilindrico){
+                    DB.abrirValvulaAlgunTanqueCil(ID, numvalvula);
+                }else if(tanq instanceof TCubico){
+                    DB.abrirValvulaAlgunTanqueCub(ID, numvalvula);
+                }else if(tanq instanceof TOrtogonal){
+                    DB.abrirValvulaAlgunTanqueOrt(ID, numvalvula);
+                }
+                JOptionPane.showMessageDialog(null, "La valvula se ha abierto");
             }
-        }
-        
-    }//GEN-LAST:event_botonAbrirActionPerformed
+        }                
+    }//GEN-LAST:event_bAbrirActionPerformed
 
-    private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
+    private void bCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCerrarActionPerformed
         // TODO add your handling code here:
         String ID = cboxRegistro.getSelectedItem().toString();
         String numvalvulaStr = spinner2.getValue().toString();
@@ -599,7 +648,7 @@ public final class GUITanques extends javax.swing.JFrame {
         boolean estadovalv = DB.getListaTanques().getTanqueBuscado(ID).getEstadoAlgunaValvula(numvalvula);  
         Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
         
-        if(estadovalv == true){
+        if(estadovalv == false){
             JOptionPane.showMessageDialog(null, "Esta valvula ya esta CERRADA.", "Valvula Cerrada", JOptionPane.INFORMATION_MESSAGE);
         }else{
             if(tanq instanceof TCilindrico){
@@ -609,23 +658,24 @@ public final class GUITanques extends javax.swing.JFrame {
             }else if(tanq instanceof TOrtogonal){
                 DB.cerrarValvulaAlgunTanqueOrt(ID, numvalvula);
             }
+            JOptionPane.showMessageDialog(null, "La valvula se ha cerrado");
         }
-    }//GEN-LAST:event_botonCerrarActionPerformed
+    }//GEN-LAST:event_bCerrarActionPerformed
 
-    private void botonValvulasCilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonValvulasCilActionPerformed
+    private void bValvulasCilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValvulasCilActionPerformed
         // TODO add your handling code here:
         int valvulas = DB.getListaTanques().cantidadValvulasCilindricos();
         JOptionPane.showMessageDialog(null, "El numero de valvulas abiertas en los tanques cilindricos de la region"
                 + "es de: "+valvulas+ " valvulas");
-    }//GEN-LAST:event_botonValvulasCilActionPerformed
+    }//GEN-LAST:event_bValvulasCilActionPerformed
 
-    private void botonM3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonM3ActionPerformed
+    private void bM3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bM3ActionPerformed
         // TODO add your handling code here:
         double m3disponibles = DB.getListaTanques().calcular_m3_disponibles();
         JOptionPane.showMessageDialog(null, "Actualmente hay "+m3disponibles+" metros cubicos disponibles de liquido para la region.");
-    }//GEN-LAST:event_botonM3ActionPerformed
+    }//GEN-LAST:event_bM3ActionPerformed
 
-    private void bInfoTanqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInfoTanqueActionPerformed
+    private void bInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInfoActionPerformed
         // TODO add your handling code here:
         String ID = cboxRegistro.getSelectedItem().toString(); 
         Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
@@ -639,8 +689,11 @@ public final class GUITanques extends javax.swing.JFrame {
             infoTanque.jTextArea1.append("Tanque Ortogonal, ID "+tanq.getID());
         }
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+        infoTanque.jTextArea1.append("* Capacidad: "+tanq.getCapacidad());
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
-        infoTanque.jTextArea1.append("Estado de Valvulas: ");
+        infoTanque.jTextArea1.append("* Volumen Actual: "+tanq.getVolumenTemporal());
+        infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+        infoTanque.jTextArea1.append("* Estado de Valvulas: ");
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
         
         int count = 1;
@@ -648,16 +701,42 @@ public final class GUITanques extends javax.swing.JFrame {
         for(int i=0;i<tanq.getValvulas().length;i++){
             valv = tanq.getValvulas()[i];
             if(valv.getEstado()==true){
-                infoTanque.jTextArea1.append("Valvula "+count+": Abierta");
-                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                if(valv.getMunicipio().length()==0){
+                    infoTanque.jTextArea1.append(" - Valvula "+count+": Abierta, Municipio: No asignado");
+                    infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                }else{
+                    infoTanque.jTextArea1.append(" - Valvula "+count+": Abierta, Municipio: "+valv.getMunicipio());
+                    infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                }
             }else{
-                infoTanque.jTextArea1.append("Valvula "+count+": Cerrada");
-                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
-            }            
+                if(valv.getMunicipio().length()==0){
+                    infoTanque.jTextArea1.append(" - Valvula "+count+": Cerrada, Municipio: No asignado");
+                    infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                }else{
+                    infoTanque.jTextArea1.append(" - Valvula "+count+": Cerrada, Municipio: "+valv.getMunicipio());
+                    infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                }
+            }
             count++;
         }   
         infot.setVisible(true);
-    }//GEN-LAST:event_bInfoTanqueActionPerformed
+    }//GEN-LAST:event_bInfoActionPerformed
+
+    private void bReestablecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReestablecerActionPerformed
+        // TODO add your handling code here:
+        String ID = cboxRegistro.getSelectedItem().toString(); 
+        Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
+        
+        DB.reestablecerTanqueCualquiera(ID, tanq);
+        JOptionPane.showMessageDialog(null, "El tanque con ID "+tanq.getID()+"Se ha reestablecido."
+                + "Sus valvulas pueden volverse a operar normalmente.");
+    }//GEN-LAST:event_bReestablecerActionPerformed
+
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+        // TODO add your handling code here:
+        DB.cerrarDB();
+        System.exit(0);
+    }//GEN-LAST:event_bSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -695,15 +774,17 @@ public final class GUITanques extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bInfoTanque;
-    private javax.swing.JButton botonAbrir;
-    private javax.swing.JButton botonAsignarValvula;
-    private javax.swing.JButton botonCerrar;
-    private javax.swing.JButton botonCilindrico;
-    private javax.swing.JButton botonCubico;
-    private javax.swing.JButton botonM3;
-    private javax.swing.JButton botonOrtogonal;
-    private javax.swing.JButton botonValvulasCil;
+    private javax.swing.JButton bAbrir;
+    private javax.swing.JButton bAsignarMunicipioValvula;
+    private javax.swing.JButton bCerrar;
+    private javax.swing.JButton bCilindrico;
+    private javax.swing.JButton bCubico;
+    private javax.swing.JButton bInfo;
+    private javax.swing.JButton bM3;
+    private javax.swing.JButton bOrtogonal;
+    private javax.swing.JButton bReestablecer;
+    private javax.swing.JButton bSalir;
+    private javax.swing.JButton bValvulasCil;
     private javax.swing.JComboBox<String> cboxMunicipios;
     private javax.swing.JComboBox<String> cboxRegistro;
     private javax.swing.JLabel jLabel1;

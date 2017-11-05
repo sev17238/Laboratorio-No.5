@@ -101,8 +101,10 @@ public class Tanque implements Serializable {
         valvulas[numvalvula-1].cerrarValvula();
     }
     
-    public void asignarMunicipioValvulaCualquiera(){
-    
+    public void asignarMunicipioValvulaCualquiera(int numvalvula,String municipio){
+        for(int i=0;i<valvulas.length;i++){            
+            valvulas[numvalvula-1].asignarMunicipio(municipio);
+        }
     }
     
     public String getID(){
@@ -121,7 +123,7 @@ public class Tanque implements Serializable {
    //-------------------------------------
     
     public void decrementarVolumen(){
-        volumentemp = volumentemp - capacidad*0.05;
+        volumentemp = volumentemp - capacidad*0.10;
     }
     public double getCapacidad(){
         return capacidad;

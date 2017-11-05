@@ -178,16 +178,124 @@ public class BaseDatosTanques {
     // cualquiera de los tres tipos de tanque.
     //-----------------------------------------------------------------
     
-    public void asignarMuniValvulaAlgunTanqueOrt(String ID,int numvalvula,String municipio){
+    public void asignarMuniValvulaTanqueCil(String ID,int numvalvula,String Municipio){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCilindrico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCilindrico cil = (TCilindrico) q.getSingleResult();
+        if(cil != null){
+            cil.asignarMunicipioValvulaCualquiera(numvalvula, Municipio);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cil);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void asignarMuniValvulaTanqueCub(String ID,int numvalvula,String Municipio){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCubico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCubico cub = (TCubico) q.getSingleResult();
+        if(cub != null){
+            cub.asignarMunicipioValvulaCualquiera(numvalvula, Municipio);
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cub);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void asignarMuniValvulaTanqueOrt(String ID,int numvalvula,String municipio){
         // recuperar de la base de datos un tanque con el ID dado:
         Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
         q.setParameter("id", ID);
         TOrtogonal ort = (TOrtogonal) q.getSingleResult();
         if(ort != null){
-            ort.cerrarValvulaCualquiera(numvalvula);
+            ort.asignarMunicipioValvulaCualquiera(numvalvula, municipio);
             em.getTransaction().begin();// grabar el tanque en la base de datos
             em.persist(ort);
             em.getTransaction().commit();
         }        
+    }
+    
+    //-----------------------------------------------------------------
+    // Metodos para cerrar todas las valvulas de un tanque cualquiera.
+    //-----------------------------------------------------------------
+    public void cerrarTodasValvulasTanqueCil(String ID){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCilindrico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCilindrico cil = (TCilindrico) q.getSingleResult();
+        if(cil != null){
+            cil.cerrarValvulas();
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cil);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void cerrarTodasValvulasTanqueCub(String ID){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TCubico d where d.ID = :id");
+        q.setParameter("id", ID);
+        TCubico cub = (TCubico) q.getSingleResult();
+        if(cub != null){
+            cub.cerrarValvulas();
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(cub);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    public void cerrarTodasValvulasTanqueOrt(String ID){
+        // recuperar de la base de datos un tanque con el ID dado:
+        Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
+        q.setParameter("id", ID);
+        TOrtogonal ort = (TOrtogonal) q.getSingleResult();
+        if(ort != null){
+            ort.cerrarValvulas();
+            em.getTransaction().begin();// grabar el tanque en la base de datos
+            em.persist(ort);
+            em.getTransaction().commit();
+        }        
+    }
+    
+    //-----------------------------------------------------------------
+    // Metodos que reestablecen un tanque cualquiera.
+    //-----------------------------------------------------------------
+    
+    public void reestablecerTanqueCualquiera(String ID, Tanque tanq){
+        // recuperar de la base de datos un tanque con el ID dado:
+        if(tanq instanceof TCilindrico){
+            Query q = em.createQuery("select d from TCilindrico d where d.ID = :id");
+            q.setParameter("id", ID);
+            TCilindrico cil = (TCilindrico) q.getSingleResult();
+            if(cil != null){
+                cil.reestablecerTanque();
+                em.getTransaction().begin();// grabar el tanque en la base de datos
+                em.persist(cil);
+                em.getTransaction().commit();
+            }    
+        }else if(tanq instanceof TCubico){
+            Query q = em.createQuery("select d from TCubico d where d.ID = :id");
+            q.setParameter("id", ID);
+            TCubico cub = (TCubico) q.getSingleResult();
+            if(cub != null){
+                cub.reestablecerTanque();
+                em.getTransaction().begin();// grabar el tanque en la base de datos
+                em.persist(cub);
+                em.getTransaction().commit();
+            }    
+        }else if(tanq instanceof TOrtogonal){
+            Query q = em.createQuery("select d from TOrtogonal d where d.ID = :id");
+            q.setParameter("id", ID);
+            TOrtogonal ort = (TOrtogonal) q.getSingleResult();
+            if(ort != null){
+                ort.reestablecerTanque();
+                em.getTransaction().begin();// grabar el tanque en la base de datos
+                em.persist(ort);
+                em.getTransaction().commit();
+            }    
+        }
+            
     }
 }
