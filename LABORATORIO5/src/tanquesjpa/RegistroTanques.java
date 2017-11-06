@@ -112,14 +112,4 @@ public class RegistroTanques {
         return null;
     }
     
-    /*public void reestablecerTanqueBuscado(String ID){
-        Tanque tanq = new Tanque();
-        for(int i=0;i<tanquesRegion.length;i++){
-            tanq = tanquesRegion[i];
-            if(tanq.getID().equals(ID)){
-                tanq.reestablecerTanque();
-            }
-        } 
-    }*/
-    
 }

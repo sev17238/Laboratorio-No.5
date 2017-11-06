@@ -122,6 +122,10 @@ public class Tanque implements Serializable {
         volumentemp = capacidad;
     }
     
+    public double getAltura(){
+        return altura;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

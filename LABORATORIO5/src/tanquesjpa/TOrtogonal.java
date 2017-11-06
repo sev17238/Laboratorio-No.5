@@ -67,6 +67,14 @@ public class TOrtogonal extends Tanque implements Serializable {
         return volumen;        
     }
     
+    public double getBase(){
+        return base;
+    }
+    
+    public double getLargo(){
+        return largo;
+    }
+    
     
     @Override
     public int hashCode() {

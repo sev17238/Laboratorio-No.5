@@ -94,6 +94,7 @@ public final class GUITanques extends javax.swing.JFrame {
         bValvulasCil = new javax.swing.JButton();
         bReestablecer = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
+        btanquesRegion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Acueducto de Albear");
@@ -197,12 +198,12 @@ public final class GUITanques extends javax.swing.JFrame {
                                     .addComponent(talturaort, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tbase, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tlargo, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelOrtogonalLayout.setVerticalGroup(
             panelOrtogonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelOrtogonalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(panelOrtogonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(tidort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -343,6 +344,7 @@ public final class GUITanques extends javax.swing.JFrame {
 
         panelOperarValvulas.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Operar valvulas"));
 
+        bAbrir.setBackground(new java.awt.Color(51, 255, 0));
         bAbrir.setText("Abrir");
         bAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -350,6 +352,7 @@ public final class GUITanques extends javax.swing.JFrame {
             }
         });
 
+        bCerrar.setBackground(new java.awt.Color(255, 0, 0));
         bCerrar.setText("Cerrar");
         bCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,46 +465,57 @@ public final class GUITanques extends javax.swing.JFrame {
             }
         });
 
+        btanquesRegion.setText("Tanques en la region");
+        btanquesRegion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btanquesRegionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelOrtogonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelCubico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelCilindrico, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelCilindrico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelOrtogonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelCubico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(bSalir))
-                    .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(bValvulasCil)
                         .addGap(72, 72, 72)
                         .addComponent(bM3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(bReestablecer)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addComponent(bReestablecer))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btanquesRegion)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bSalir))
+                        .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addComponent(panelCilindrico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
-                        .addComponent(panelOrtogonal, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
+                        .addComponent(panelOrtogonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(panelCubico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(bSalir)
-                        .addGap(18, 18, 18)
+                        .addGap(8, 8, 8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btanquesRegion)
+                            .addComponent(bSalir))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelOperarTanques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -509,7 +523,7 @@ public final class GUITanques extends javax.swing.JFrame {
                             .addComponent(bM3))
                         .addGap(11, 11, 11)
                         .addComponent(bReestablecer)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         panelOrtogonal.getAccessibleContext().setAccessibleName("");
@@ -536,7 +550,7 @@ public final class GUITanques extends javax.swing.JFrame {
         }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
-                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
+                    + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bCilindricoActionPerformed
 
@@ -560,7 +574,7 @@ public final class GUITanques extends javax.swing.JFrame {
         }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
-                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
+                    + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bOrtogonalActionPerformed
 
@@ -580,7 +594,7 @@ public final class GUITanques extends javax.swing.JFrame {
         }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
-                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
+                    + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bCubicoActionPerformed
 
@@ -705,7 +719,7 @@ public final class GUITanques extends javax.swing.JFrame {
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
         infoTanque.jTextArea1.append("* Capacidad: "+tanq.getCapacidad());
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
-        infoTanque.jTextArea1.append("* Volumen Actual: "+tanq.getVolumenTemporal());
+        infoTanque.jTextArea1.append("* Volumen de Agua Actual: "+tanq.getVolumenTemporal());
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
         infoTanque.jTextArea1.append("* Estado de Valvulas: ");
         infoTanque.jTextArea1.append(System.getProperty("line.separator"));
@@ -749,7 +763,7 @@ public final class GUITanques extends javax.swing.JFrame {
             
             if(temp <= min){
                 DB.reestablecerTanqueCualquiera(ID, tanq);
-                JOptionPane.showMessageDialog(null, "El tanque con ID "+tanq.getIdentificacion()+"Se ha reestablecido.\n"
+                JOptionPane.showMessageDialog(null, "El tanque con ID "+tanq.getIdentificacion()+" Se ha reestablecido.\n"
                         + "Sus valvulas pueden volverse a operar normalmente.");
             }else{
                 JOptionPane.showMessageDialog(null, "El volumen actual todavia no es menor al 25% de\n"
@@ -766,6 +780,60 @@ public final class GUITanques extends javax.swing.JFrame {
         DB.cerrarDB();
         System.exit(0);
     }//GEN-LAST:event_bSalirActionPerformed
+
+    private void btanquesRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btanquesRegionActionPerformed
+        // TODO add your handling code here:
+        try{
+        Tanque tanq = new Tanque();
+        Tanque[] tanques = DB.listatanques.getTanquesRegion();
+        infoTanque infot = new infoTanque();
+        
+        infoTanque.jTextArea1.append("TANQUES EN EL REGISTRO");
+        infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+        infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+        
+        for(int i=0;i<tanques.length;i++){
+            tanq = tanques[i];
+            if(tanq instanceof TCilindrico){  
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Forma: Cilindrico");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Especificaciones: "+tanq.getAltura()+"(alto), "+((TCilindrico)tanq).getRadio()+"(radio)");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Capacidad: "+tanq.getCapacidad());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Volumen de agua actual: "+tanq.getVolumenTemporal());              
+            }else if(tanq instanceof TCubico){
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Forma: Cubico");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Especificaciones: "+tanq.getAltura()+"(arista)");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Capacidad: "+tanq.getCapacidad());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Volumen de agua actual: "+tanq.getVolumenTemporal());
+            }else if(tanq instanceof TOrtogonal){
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Forma: Ortogonal");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Especificaciones: "+tanq.getAltura()+"(alto)"+((TOrtogonal)tanq).getBase()+"(base)"+((TOrtogonal)tanq).getLargo()+"(largo)");
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Capacidad: "+tanq.getCapacidad());
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append("Volumen de agua actual: "+tanq.getVolumenTemporal());
+            }
+        }
+        infot.setVisible(true);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "No hay tanques en el registro aun.");
+        }        
+    }//GEN-LAST:event_btanquesRegionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -814,6 +882,7 @@ public final class GUITanques extends javax.swing.JFrame {
     private javax.swing.JButton bReestablecer;
     private javax.swing.JButton bSalir;
     private javax.swing.JButton bValvulasCil;
+    private javax.swing.JButton btanquesRegion;
     private javax.swing.JComboBox<String> cboxMunicipios;
     private javax.swing.JComboBox<String> cboxRegistro;
     private javax.swing.JLabel jLabel1;

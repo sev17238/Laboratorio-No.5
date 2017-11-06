@@ -63,6 +63,9 @@ public class TCilindrico extends Tanque implements Serializable {
         return volumen;
     }
     
+    public double getRadio(){
+        return radio;
+    }    
     
     @Override
     public int hashCode() {
