@@ -2,6 +2,7 @@
 package tanquesjpa;
 
 import javax.swing.JOptionPane;
+import java.lang.NumberFormatException;
 
 /**
  * 
@@ -533,8 +534,9 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cilindrico exitosamente.", "Tanque Cilindrico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-        }catch(Exception e){
-            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
+                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_bCilindricoActionPerformed
 
@@ -556,8 +558,9 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque ortogonal exitosamente.", "Tanque Ortogonal Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-        }catch(Exception e){
-        
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
+                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_bOrtogonalActionPerformed
 
@@ -575,8 +578,9 @@ public final class GUITanques extends javax.swing.JFrame {
             actualizarCBoxRegistro();
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cubico exitosamente.", "Tanque Cubico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
-        }catch(Exception e){
-            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
+                    + "Vuelva a intentarlo.", "", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_bCubicoActionPerformed
 
@@ -605,15 +609,10 @@ public final class GUITanques extends javax.swing.JFrame {
         String municipio = cboxMunicipios.getSelectedItem().toString();
         int numvalvula = Integer.parseInt(numvalvulaStr);
         
-        Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);
+        Tanque tanq = DB.getListaTanques().getTanqueBuscado(ID);        
         
-        if(tanq instanceof TCilindrico){
-            DB.asignarMuniValvulaTanqueCil(ID, numvalvula, municipio);
-        }else if(tanq instanceof TCubico){
-            DB.asignarMuniValvulaTanqueCub(ID, numvalvula, municipio);
-        }else if(tanq instanceof TOrtogonal){
-            DB.asignarMuniValvulaTanqueOrt(ID, numvalvula, municipio);
-        }
+        DB.asignarMuniValvulaTanque(ID, numvalvula, municipio, tanq);
+       
         JOptionPane.showMessageDialog(null, "Asignacion de municipio a valvula exitosa.", "", JOptionPane.INFORMATION_MESSAGE);
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
@@ -636,24 +635,16 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Esta valvula ya esta ABIERTA.", "Valvula Abierta", JOptionPane.INFORMATION_MESSAGE);
         }else{
             if(temp <= min){        
-                if(tanq instanceof TCilindrico){
-                    DB.cerrarTodasValvulasTanqueCil(ID);
-                }else if(tanq instanceof TCubico){
-                    DB.cerrarTodasValvulasTanqueCub(ID);
-                }else if(tanq instanceof TOrtogonal){
-                    DB.cerrarTodasValvulasTanqueOrt(ID);
-                }
+                
+                DB.cerrarTodasValvulasTanque(ID, tanq);
+                
                 JOptionPane.showMessageDialog(null, "La cantidad de liquido actual del tanque es menor\n"
                         + "al 25% de su capacidad. Todas sus valvulas se han cerrado.\n"
                         + "Si desea volver a operar el tanque oprima 'Reestablecer Tanque'", "", JOptionPane.INFORMATION_MESSAGE);
             }else{
-                if(tanq instanceof TCilindrico){
-                    DB.abrirValvulaAlgunTanqueCil(ID, numvalvula);
-                }else if(tanq instanceof TCubico){
-                    DB.abrirValvulaAlgunTanqueCub(ID, numvalvula);
-                }else if(tanq instanceof TOrtogonal){
-                    DB.abrirValvulaAlgunTanqueOrt(ID, numvalvula);
-                }
+                
+                DB.abrirValvulaAlgunTanque(ID, numvalvula, tanq);
+                
                 JOptionPane.showMessageDialog(null, "La valvula se ha abierto");
             }
         }     
@@ -674,13 +665,9 @@ public final class GUITanques extends javax.swing.JFrame {
         if(estadovalv == false){
             JOptionPane.showMessageDialog(null, "Esta valvula ya esta CERRADA.", "Valvula Cerrada", JOptionPane.INFORMATION_MESSAGE);
         }else{
-            if(tanq instanceof TCilindrico){
-                DB.cerrarValvulaAlgunTanqueCil(ID, numvalvula);
-            }else if(tanq instanceof TCubico){
-                DB.cerrarValvulaAlgunTanqueCub(ID, numvalvula);
-            }else if(tanq instanceof TOrtogonal){
-                DB.cerrarValvulaAlgunTanqueOrt(ID, numvalvula);
-            }
+            
+            DB.cerrarValvulaAlgunTanque(ID, numvalvula, tanq);
+            
             JOptionPane.showMessageDialog(null, "La valvula se ha cerrado");
         }
         }catch(Exception e){
