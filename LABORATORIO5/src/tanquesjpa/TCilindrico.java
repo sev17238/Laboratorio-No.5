@@ -44,6 +44,12 @@ public class TCilindrico extends Tanque implements Serializable {
         
     }
     
+     /**
+     * Metodo que crea un nuevo tanque cilinrico
+     * @param id del tanque
+     * @param altura del tanque
+     * @param  radio del tanque
+     */
     public void setTCilindrico(String id, double altura, double radio){
         super.setTanque(id, altura);
         this.radio = radio;
@@ -63,6 +69,10 @@ public class TCilindrico extends Tanque implements Serializable {
         return volumen;
     }
     
+    /**
+     * Metodo que devuleve el radio del cilindro
+     * @return radio 
+     */
     public double getRadio(){
         return radio;
     }    

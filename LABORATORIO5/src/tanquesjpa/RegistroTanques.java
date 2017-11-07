@@ -34,7 +34,10 @@ public class RegistroTanques {
             count ++;
         }    
     }
-    
+    /**
+    * Método que calcula la cantidad total de metros cúbicos de agua disponible que quedan para la región.
+    * @return volumen total del tanque
+    */ 
     public double calcular_m3_disponibles(){
         double volumentotal = 0;
         Tanque tanq = new Tanque();
@@ -47,6 +50,10 @@ public class RegistroTanques {
         return volumentotal;
     }
     
+    /**
+     * metodo que cuenta la cantidad de valvulas abiertas de los tanques cilindricos de la lista tanques
+     * @return valvulas abiertas
+     */
     public int cantidadValvulasCilindricos(){
         int valvulasabiertas = 0;
         Tanque tanq = new Tanque();
@@ -64,7 +71,10 @@ public class RegistroTanques {
         }
         return valvulasabiertas;
     }
-    
+    /**
+     * Metodo que retorna una lista con los id de cada uno de los tanques que haya en la lista TanquesRegion
+     * @return IDS
+     */
     public String[] retornarListaIDTanques(){
         int tanques = 0;
         Tanque tanq = new Tanque();
@@ -85,11 +95,14 @@ public class RegistroTanques {
         }
         return IDS;
     }
-        
+    /**
+     * Metodo retorna la lista en donde se almacenan todos los tanques ingresados
+     * @return tanquesRegion
+     */    
     public Tanque[] getTanquesRegion(){
         return tanquesRegion;
     }
-    
+    //Metodo que ingresa un nuevo tanque a la lista registro
     public void nuevoTanque(Tanque tanque){
         Tanque tanq = new Tanque();
         for(int i=0;i<tanquesRegion.length;i++){
@@ -100,7 +113,11 @@ public class RegistroTanques {
             }
         }        
     }
-    
+    /**
+     * Metodo que retorna el tanque con el ID ingresado
+     * @param ID
+     * @return 
+     */
     public Tanque getTanqueBuscado(String ID){
         Tanque tanq = new Tanque();
         for(int i=0;i<tanquesRegion.length;i++){

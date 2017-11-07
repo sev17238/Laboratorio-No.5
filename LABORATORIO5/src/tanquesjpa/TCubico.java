@@ -42,6 +42,11 @@ public class TCubico extends Tanque implements Serializable {
         
     }
     
+    /**
+     * Metodo que crea un nuevo tanque cubico
+     * @param id 
+     * @param altura del tanque
+     */
     public void setTCubico(String id, double altura){
         super.setTanque(id, altura);
         double volumen = calcularVolumen(altura);

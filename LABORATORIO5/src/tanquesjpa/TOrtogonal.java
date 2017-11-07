@@ -25,7 +25,11 @@ public class TOrtogonal extends Tanque implements Serializable {
     protected double base;
     protected double largo;
     
-    
+    /**
+     * Metodo que devuelve el id del tanque
+     * @param 
+     * @return 
+     */
     @Override
     public Long getId() {
         return id;
@@ -46,6 +50,14 @@ public class TOrtogonal extends Tanque implements Serializable {
         this.largo = 0;
     }
     
+    /**
+     * Metodo que crea un nuevo tanque ortogonal
+     * @param id del tanque
+     * @param base del tanque
+     * @param largo del tanque 
+     * @param altura del tanque
+     * @return 
+     */
     public void setTOrtogonal(String id, double base, double largo, double altura){
         super.setTanque(id, altura);
         this.base = base;
@@ -66,11 +78,20 @@ public class TOrtogonal extends Tanque implements Serializable {
         double volumen = base * largo * altura;
         return volumen;        
     }
-    
+    /**
+     * Metodo que devuelve la base del tanque
+     * @param 
+     * @return base del tanque
+     */
     public double getBase(){
         return base;
     }
     
+    /**
+     * Metodo que devuelve el largo del tanque
+     * @param 
+     * @return largo del tanque
+     */
     public double getLargo(){
         return largo;
     }
