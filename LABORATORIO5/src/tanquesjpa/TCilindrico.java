@@ -46,11 +46,11 @@ public class TCilindrico extends Tanque implements Serializable {
     
     public void setTCilindrico(String id, double altura, double radio){
         super.setTanque(id, altura);
+        this.radio = radio;
         double volumen = calcularVolumen(altura,radio);
         capacidad = volumen;
         volumentemp= volumen;
-        volumenminimo = volumen/4;
-        
+        volumenminimo = volumen/4;        
     }
     /**
      * Metodo que calcula el volumen de un tanque cilindrico

@@ -2,7 +2,6 @@
 package tanquesjpa;
 
 import javax.swing.JOptionPane;
-import java.lang.NumberFormatException;
 
 /**
  * 
@@ -546,6 +545,7 @@ public final class GUITanques extends javax.swing.JFrame {
             double radiod = Double.parseDouble(radio);
             DB.nuevoTanqueCilindrico(id, alturad, radiod);
             actualizarCBoxRegistro();
+            tidcil.setText(null);talturacil.setText(null);tradio.setText(null);
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cilindrico exitosamente.", "Tanque Cilindrico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
         }catch(NumberFormatException e){
@@ -570,6 +570,7 @@ public final class GUITanques extends javax.swing.JFrame {
             double based = Double.parseDouble(base);
             DB.nuevoTanqueOrtogonal(id, based, largod, alturad);
             actualizarCBoxRegistro();
+            tidort.setText(null);talturaort.setText(null);tlargo.setText(null);tbase.setText(null);
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque ortogonal exitosamente.", "Tanque Ortogonal Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
         }catch(NumberFormatException e){
@@ -590,6 +591,7 @@ public final class GUITanques extends javax.swing.JFrame {
             double alturad = Double.parseDouble(altura);
             DB.nuevoTanqueCubico(id, alturad);
             actualizarCBoxRegistro();
+            tidcub.setText(null);talturacub.setText(null);
             JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cubico exitosamente.", "Tanque Cubico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
         }
         }catch(NumberFormatException e){
@@ -796,6 +798,7 @@ public final class GUITanques extends javax.swing.JFrame {
             tanq = tanques[i];
             if(tanq instanceof TCilindrico){  
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("Forma: Cilindrico");
@@ -806,6 +809,7 @@ public final class GUITanques extends javax.swing.JFrame {
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("Volumen de agua actual: "+tanq.getVolumenTemporal());              
             }else if(tanq instanceof TCubico){
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
@@ -818,11 +822,12 @@ public final class GUITanques extends javax.swing.JFrame {
                 infoTanque.jTextArea1.append("Volumen de agua actual: "+tanq.getVolumenTemporal());
             }else if(tanq instanceof TOrtogonal){
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
+                infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("ID: "+tanq.getIdentificacion());
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("Forma: Ortogonal");
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
-                infoTanque.jTextArea1.append("Especificaciones: "+tanq.getAltura()+"(alto)"+((TOrtogonal)tanq).getBase()+"(base)"+((TOrtogonal)tanq).getLargo()+"(largo)");
+                infoTanque.jTextArea1.append("Especificaciones: "+tanq.getAltura()+"(alto), "+((TOrtogonal)tanq).getBase()+"(base), "+((TOrtogonal)tanq).getLargo()+"(largo)");
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
                 infoTanque.jTextArea1.append("Capacidad: "+tanq.getCapacidad());
                 infoTanque.jTextArea1.append(System.getProperty("line.separator"));
