@@ -2,18 +2,26 @@
 package tanquesjpa;
 import java.util.List;
 /**
- * 
+ * Clase que representa el registro de los tanques del acueducto de Albear
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
 public class RegistroTanques {
     private Tanque[] tanquesRegion;
-    
+    /**
+     * Constructor principal de la clase con un array de 10 posiciones.
+     */
     public RegistroTanques(){
         tanquesRegion = new Tanque[10];
     
     }
-    
+    /**
+     * Constructor secundario de la clase que es usado en la clase de BaseDatosTanques para obtener los 
+     * tanques alamacenados en ella.
+     * @param cilindricos
+     * @param cubicos
+     * @param ortogonales 
+     */
     public RegistroTanques(List<TCilindrico> cilindricos,List<TCubico> cubicos,List<TOrtogonal> ortogonales){
         tanquesRegion = new Tanque[10];
         Tanque tanq = new Tanque();
@@ -32,7 +40,7 @@ public class RegistroTanques {
             tanq = ortogonales.get(i);
             tanquesRegion[count] = tanq;
             count ++;
-        }    
+        } 
     }
     /**
     * Método que calcula la cantidad total de metros cúbicos de agua disponible que quedan para la región.
@@ -102,7 +110,10 @@ public class RegistroTanques {
     public Tanque[] getTanquesRegion(){
         return tanquesRegion;
     }
-    //Metodo que ingresa un nuevo tanque a la lista registro
+    /**
+     * Metodo que ingresa un nuevo tanque a la lista de los tanques de la region.
+     * @param tanque un tanque de cualquier tipo
+     */
     public void nuevoTanque(Tanque tanque){
         Tanque tanq = new Tanque();
         for(int i=0;i<tanquesRegion.length;i++){
@@ -115,8 +126,8 @@ public class RegistroTanques {
     }
     /**
      * Metodo que retorna el tanque con el ID ingresado
-     * @param ID
-     * @return 
+     * @param ID del tanque que se quiere encontrar
+     * @return el tanque al que le pertenece la ID especificada
      */
     public Tanque getTanqueBuscado(String ID){
         Tanque tanq = new Tanque();

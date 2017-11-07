@@ -5,7 +5,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 /**
- * 
+ * Clase que representa el puente entre el programa y la base de datos; En esta clase se actualizan los 
+ * tanques del registro y se ingresan a la base de datos ya con los cambios.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -13,13 +14,18 @@ public class BaseDatosTanques {
     RegistroTanques listatanques;
     EntityManagerFactory emf;  // para especificar la Persistent Unit y conexion a la base de datos
     EntityManager em; // manejador de las entidades en la base de datos
-    
+    /**
+     * Constructor de la clase.
+     */
     public BaseDatosTanques(){
         emf = javax.persistence.Persistence.createEntityManagerFactory("LABORATORIO5PU");
         em = emf.createEntityManager();
         listatanques = new RegistroTanques(); //registro de tanques vacio
     }
-    
+    /**
+     * Metodo que cierra las operaciones realizadas por los atributos dedicados al almacenamiento 
+     * de datos en mySQL JPA.
+     */
     public void cerrarDB(){
         em.close();
         emf.close();
@@ -50,46 +56,62 @@ public class BaseDatosTanques {
         listatanques = new RegistroTanques(cilindricos,cubicos,ortogonales);
     }
     
-    //-----------------------------------------------------------------
-    // Metodos para crear nuevos tanques en el registro y en la base de datos.
-    //-----------------------------------------------------------------
-    
+    /**
+     * Metodo que ingresa un nuevo tanque cilindrico a la base de datos.
+     * @param id del tanque cilindrico
+     * @param altura del tanque cilindrico
+     * @param radio del tanque cilindrico
+     */
     public void nuevoTanqueCilindrico(String id,double altura,double radio){
         TCilindrico cil = new TCilindrico();
         cil.setTCilindrico(id, altura, radio);
+        listatanques.nuevoTanque(cil);  
         em.getTransaction().begin();
         em.persist(cil);
-        em.getTransaction().commit();
-        listatanques.nuevoTanque(cil);        
+        em.getTransaction().commit();      
     }
-    
+    /**
+     * Metodo que ingresa un nuevo tanque cubico a la base de datos.
+     * @param id del tanque cubico
+     * @param altura del tanque cubico
+     */
     public void nuevoTanqueCubico(String id,double altura){
         TCubico cub = new TCubico();
         cub.setTCubico(id, altura);
+        listatanques.nuevoTanque(cub);
         em.getTransaction().begin();
         em.persist(cub);
         em.getTransaction().commit();
-        listatanques.nuevoTanque(cub);
     }
-    
+    /**
+     * Metodo que ingresa un nuevo tanque ortogonal a la base de datos.
+     * @param id del tanque ortogonal
+     * @param base del tanque ortogonal
+     * @param largo del tanque ortogonal
+     * @param altura del tanque ortogonal
+     */
     public void nuevoTanqueOrtogonal(String id,double base,double largo,double altura){
         TOrtogonal ort = new TOrtogonal();
         ort.setTOrtogonal(id, base, largo, altura);
+        listatanques.nuevoTanque(ort);
         em.getTransaction().begin();
         em.persist(ort);
         em.getTransaction().commit();
-        listatanques.nuevoTanque(ort);
     }
-    
+    /**
+     * Metodo que retorna el atributo de tipo RegistroTanques de la clase.
+     * @return listatanques
+     */
     public RegistroTanques getListaTanques(){
         return listatanques;
     }
     
-    //-----------------------------------------------------------------
-    // Metodos para abrir alguna valvula en alguno de los 3 tipos de   
-    // tanques que hay en la base de datos.
-    //-----------------------------------------------------------------
-    
+    /**
+     * Metodo que abre una valvula de cualquiera tanque y lo ingresa con el cambio a la base de datos.
+     * @param ID del tanque
+     * @param numvalvula del tanque
+     * @param tanq del tanque
+     */
     public void abrirValvulaAlgunTanque(String ID,int numvalvula,Tanque tanq){
         if(tanq instanceof TCilindrico){
             // recuperar de la base de datos un tanque con el ID dado:
@@ -127,11 +149,12 @@ public class BaseDatosTanques {
         }
     }
     
-    //-----------------------------------------------------------------
-    // Metodos para cerrar alguna valvula en alguno de los 3 tipos de  
-    // tanques que hay en la base de datos.
-    //-----------------------------------------------------------------
-    
+    /**
+     * Metodo que cierra una valvula de cualquiera tanque y lo ingresa con el cambio a la base de datos.
+     * @param ID del tanque
+     * @param numvalvula de alguna valvula del tanque
+     * @param tanq el tanque
+     */
     public void cerrarValvulaAlgunTanque(String ID,int numvalvula,Tanque tanq){
         if(tanq instanceof TCilindrico){
             // recuperar de la base de datos un tanque con el ID dado:
@@ -168,12 +191,14 @@ public class BaseDatosTanques {
             }  
         }
     }
-    
-    //-----------------------------------------------------------------
-    // Metodos para asignar un municipio a alguna de las valvulas de 
-    // cualquiera de los tres tipos de tanque.
-    //-----------------------------------------------------------------
-    
+   
+    /**
+     * Metodos para asignar un municipio a alguna de las valvulas de cualquiera de los tres tipos de tanque.
+     * @param ID del tanque
+     * @param numvalvula  de alguna valvula del tanque
+     * @param Municipio  de alguna valvula del tanque
+     * @param tanq el tanque
+     */
     public void asignarMuniValvulaTanque(String ID,int numvalvula,String Municipio,Tanque tanq){
         if(tanq instanceof TCilindrico){
             // recuperar de la base de datos un tanque con el ID dado:
@@ -211,9 +236,11 @@ public class BaseDatosTanques {
         }
     }
     
-    //-----------------------------------------------------------------
-    // Metodos para cerrar todas las valvulas de un tanque cualquiera.
-    //-----------------------------------------------------------------
+    /**
+     * Metodo para cerrar todas las valvulas de un tanque cualquiera.
+     * @param ID del tanque
+     * @param tanq el tanque
+     */
     public void cerrarTodasValvulasTanque(String ID,Tanque tanq){
         if(tanq instanceof TCilindrico){
             // recuperar de la base de datos un tanque con el ID dado:
@@ -251,10 +278,11 @@ public class BaseDatosTanques {
         }        
     }
     
-    //-----------------------------------------------------------------
-    // Metodos que reestablecen un tanque cualquiera.
-    //-----------------------------------------------------------------
-    
+    /**
+     * Metodo que reestablecen un tanque cualquiera.
+     * @param ID del tanque
+     * @param tanq el tanque
+     */
     public void reestablecerTanqueCualquiera(String ID, Tanque tanq){
         // recuperar de la base de datos un tanque con el ID dado:
         if(tanq instanceof TCilindrico){

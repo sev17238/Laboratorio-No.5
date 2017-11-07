@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tanquesjpa;
 
 /**
- *
- * @author SDiego
+ * Clase que crea un frame que contiene una area de texto en donde se puede desplegar la informacion 
+ * de un tanque en especifico o de varios tanques en conjunto.
+ * @author MarianaMorales17235
+ * @author DiegoSevilla17238
  */
 public class infoTanque extends javax.swing.JFrame {
 

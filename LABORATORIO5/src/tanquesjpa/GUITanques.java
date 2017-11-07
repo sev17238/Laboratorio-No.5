@@ -4,7 +4,8 @@ package tanquesjpa;
 import javax.swing.JOptionPane;
 
 /**
- * 
+ * Clase que crea la interfaz grafica con la que podra interactuar algun usuario y realizar las
+ * tareas respectivas de control del acueducto.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -22,7 +23,9 @@ public final class GUITanques extends javax.swing.JFrame {
         DB.recuperarTanques();
         llenarCBoxRegistro();
     }
-    
+    /**
+     * Este metodo llena el combo box del registro al iniciar el programa.
+     */
     public void llenarCBoxRegistro(){
         String[] idtanques = DB.getListaTanques().retornarListaIDTanques();
         cboxRegistro.addItem("");
@@ -30,7 +33,9 @@ public final class GUITanques extends javax.swing.JFrame {
             cboxRegistro.addItem(idtanques[i]);
         }        
     }
-    
+    /**
+     * Este metodo acutaliza el combo box del registro cada vez que se ingresa un nuevo tanque.
+     */
     public void actualizarCBoxRegistro(){
         cboxRegistro.removeAllItems();
         String[] idtanques = DB.getListaTanques().retornarListaIDTanques();
@@ -530,76 +535,101 @@ public final class GUITanques extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo de boton que introduce un nuevo tanque cilindrico a la base de datos y al registro de tanques.
+     * @param evt 
+     */
     private void bCilindricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCilindricoActionPerformed
         // TODO add your handling code here:
         try{
-        String id = tidcil.getText();
-        String altura = talturacil.getText();
-        String radio = tradio.getText();
+            String id = tidcil.getText();
+            String altura = talturacil.getText();
+            String radio = tradio.getText();
         
-        if(id.length()==0 || altura.length()==0 || radio.length()==0){
-            JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            double alturad = Double.parseDouble(altura);
-            double radiod = Double.parseDouble(radio);
-            DB.nuevoTanqueCilindrico(id, alturad, radiod);
-            actualizarCBoxRegistro();
-            tidcil.setText(null);talturacil.setText(null);tradio.setText(null);
-            JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cilindrico exitosamente.", "Tanque Cilindrico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
-        }
+            if(id.length()==0 || altura.length()==0 || radio.length()==0){
+                JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                double alturad = Double.parseDouble(altura);
+                double radiod = Double.parseDouble(radio);
+                DB.nuevoTanqueCilindrico(id, alturad, radiod);
+                actualizarCBoxRegistro();
+                tidcil.setText(null);talturacil.setText(null);tradio.setText(null);
+                JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cilindrico exitosamente.", "Tanque Cilindrico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
+            }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
                     + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Solo se permite un maximo de 10 tanques en el registro.\n"
+                    + "Ya no se pueden ingresar mas.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bCilindricoActionPerformed
-
+    
+    /**
+     * Metodo de boton que introduce un nuevo tanque ortogonal a la base de datos y al registro de tanques.
+     * @param evt 
+     */
     private void bOrtogonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bOrtogonalActionPerformed
         // TODO add your handling code here:
         try{
-        String id = tidort.getText();
-        String altura = talturaort.getText();
-        String largo = tlargo.getText();
-        String base = tbase.getText();
+            String id = tidort.getText();
+            String altura = talturaort.getText();
+            String largo = tlargo.getText();
+            String base = tbase.getText();
         
-        if(id.length()==0 || altura.length()==0 || largo.length()==0 || base.length()==0){
-            JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            double alturad = Double.parseDouble(altura);
-            double largod = Double.parseDouble(largo);
-            double based = Double.parseDouble(base);
-            DB.nuevoTanqueOrtogonal(id, based, largod, alturad);
-            actualizarCBoxRegistro();
-            tidort.setText(null);talturaort.setText(null);tlargo.setText(null);tbase.setText(null);
-            JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque ortogonal exitosamente.", "Tanque Ortogonal Ingresado", JOptionPane.INFORMATION_MESSAGE);            
-        }
+            if(id.length()==0 || altura.length()==0 || largo.length()==0 || base.length()==0){
+                JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                double alturad = Double.parseDouble(altura);
+                double largod = Double.parseDouble(largo);
+                double based = Double.parseDouble(base);
+                DB.nuevoTanqueOrtogonal(id, based, largod, alturad);
+                actualizarCBoxRegistro();
+                tidort.setText(null);talturaort.setText(null);tlargo.setText(null);tbase.setText(null);
+                JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque ortogonal exitosamente.", "Tanque Ortogonal Ingresado", JOptionPane.INFORMATION_MESSAGE);            
+            }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
                     + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Solo se permite un maximo de 10 tanques en el registro.\n"
+                    + "Ya no se pueden ingresar mas.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bOrtogonalActionPerformed
-
+    
+    /**
+     * Metodo de boton que introduce un nuevo tanque cubico a la base de datos y al registro de tanques.
+     * @param evt 
+     */
     private void bCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCubicoActionPerformed
         // TODO add your handling code here:
         try{
-        String id = tidcub.getText();
-        String altura = talturacub.getText();
+            String id = tidcub.getText();
+            String altura = talturacub.getText();
         
-        if(id.length()==0 || altura.length()==0){
-            JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            double alturad = Double.parseDouble(altura);
-            DB.nuevoTanqueCubico(id, alturad);
-            actualizarCBoxRegistro();
-            tidcub.setText(null);talturacub.setText(null);
-            JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cubico exitosamente.", "Tanque Cubico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
-        }
+            if(id.length()==0 || altura.length()==0){
+                JOptionPane.showMessageDialog(null, "No deje campos vacios.", "", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                double alturad = Double.parseDouble(altura);
+                DB.nuevoTanqueCubico(id, alturad);
+                actualizarCBoxRegistro();
+                tidcub.setText(null);talturacub.setText(null);
+                JOptionPane.showMessageDialog(null, "Se ha ingresado un nuevo tanque cubico exitosamente.", "Tanque Cubico Ingresado", JOptionPane.INFORMATION_MESSAGE);            
+            }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Se ha ingresado un valor incorrecto en los campos de texto.\n"
                     + "Vuelva a intentarlo.", "", JOptionPane.WARNING_MESSAGE);
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "Solo se permite un maximo de 10 tanques en el registro.\n"
+                    + "Ya no se pueden ingresar mas.", "", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_bCubicoActionPerformed
-
+    
+    /**
+     * Metodo que cambia lo escrito en labeltipo dependiendo del item seleccionado en el combo box del registro.
+     * @param evt 
+     */
     private void cboxRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxRegistroActionPerformed
         // TODO add your handling code here:
         try{
@@ -616,7 +646,11 @@ public final class GUITanques extends javax.swing.JFrame {
             labeltipo.setText("--------------");
         }
     }//GEN-LAST:event_cboxRegistroActionPerformed
-
+    /**
+     * Metodo de boton que asigna un municipio a alguna valvula del tanque al que le pertenesca la id 
+     * seleccionada en el combo box del registro.
+     * @param evt 
+     */
     private void bAsignarMunicipioValvulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAsignarMunicipioValvulaActionPerformed
         // TODO add your handling code here:
         try{
@@ -634,7 +668,11 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
         }
     }//GEN-LAST:event_bAsignarMunicipioValvulaActionPerformed
-
+    /**
+     * Metodo de boton que abre alguna valvula del tanque al que le pertenesca la id 
+     * seleccionada en el combo box del registro.
+     * @param evt 
+     */
     private void bAbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAbrirActionPerformed
         // TODO add your handling code here:
         try{
@@ -668,7 +706,12 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
         }
     }//GEN-LAST:event_bAbrirActionPerformed
-
+    
+    /**
+     * Metodo de boton que cierra alguna valvula del tanque al que le pertenesca la id 
+     * seleccionada en el combo box del registro.
+     * @param evt 
+     */
     private void bCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCerrarActionPerformed
         // TODO add your handling code here:
         try{
@@ -690,20 +733,34 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
         }
     }//GEN-LAST:event_bCerrarActionPerformed
-
+    /**
+     * Metodo de boton que despliega un mensaje en donde se puede visualizar el numero total de valvulas 
+     * abiertas de los tanques cilindricos de la region.
+     * @param evt 
+     */
     private void bValvulasCilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bValvulasCilActionPerformed
         // TODO add your handling code here:
         int valvulas = DB.getListaTanques().cantidadValvulasCilindricos();
         JOptionPane.showMessageDialog(null, "Actualemente hay "+valvulas+" valvulas abiertas en\n"
                 + "los tanques cilindricos de la region.");
     }//GEN-LAST:event_bValvulasCilActionPerformed
-
+    
+    /**
+     * Metodo de boton que despliega un mensaje en donde se puede visualizar la cantidad de volumen de 
+     * agua disponible para la region, es decir la suma de la cantidad de agua de todos los tanques del 
+     * registro.
+     * @param evt 
+     */
     private void bM3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bM3ActionPerformed
         // TODO add your handling code here:
         double m3disponibles = DB.getListaTanques().calcular_m3_disponibles();
         JOptionPane.showMessageDialog(null, "Actualmente hay "+m3disponibles+" metros cubicos disponibles \nde liquido para la region.");
     }//GEN-LAST:event_bM3ActionPerformed
-
+    /**
+     * Metodo de boton que despliega un frame con un area de texto en donde se puede visualizar la informacion
+     * del tanque al que le pertenesca la id seleccionada en el combobox del registro de tanques.
+     * @param evt 
+     */
     private void bInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInfoActionPerformed
         // TODO add your handling code here:
         try{
@@ -754,7 +811,11 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
         }
     }//GEN-LAST:event_bInfoActionPerformed
-
+    /**
+     * Metodo de boton que reestablece el tanque al que le pertenesca la id seleccinada en el combobox del 
+     * registro de tanques.
+     * @param evt 
+     */
     private void bReestablecerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bReestablecerActionPerformed
         // TODO add your handling code here:
         try{
@@ -776,13 +837,20 @@ public final class GUITanques extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay ningun item seleccionado en el combo box del registro.");
         }
     }//GEN-LAST:event_bReestablecerActionPerformed
-
+    /**
+     * Metodo qe boton que sirve para salir del programa.
+     * @param evt 
+     */
     private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
         // TODO add your handling code here:
         DB.cerrarDB();
         System.exit(0);
     }//GEN-LAST:event_bSalirActionPerformed
-
+    /**
+     * Metodo de boton que despliega un frame con un area de texto en donde se puede ver la informacion mas
+     * basica de todos los tanques que se encuentran registrados.
+     * @param evt 
+     */
     private void btanquesRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btanquesRegionActionPerformed
         // TODO add your handling code here:
         try{

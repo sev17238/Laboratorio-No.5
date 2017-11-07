@@ -8,14 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
+ * Clase que representa a los tanques ortogonales del acueducto de Albear.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
 @Entity
 public class TOrtogonal extends Tanque implements Serializable {
 
-    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,11 +24,6 @@ public class TOrtogonal extends Tanque implements Serializable {
     protected double base;
     protected double largo;
     
-    /**
-     * Metodo que devuelve el id del tanque
-     * @param 
-     * @return 
-     */
     @Override
     public Long getId() {
         return id;
@@ -40,7 +34,6 @@ public class TOrtogonal extends Tanque implements Serializable {
         this.id = id;
     }
 
-    
     /**
      * Constructor for objects of class TOrtogonal: Utilizado por la base de datos
      */
@@ -56,7 +49,6 @@ public class TOrtogonal extends Tanque implements Serializable {
      * @param base del tanque
      * @param largo del tanque 
      * @param altura del tanque
-     * @return 
      */
     public void setTOrtogonal(String id, double base, double largo, double altura){
         super.setTanque(id, altura);
@@ -80,7 +72,6 @@ public class TOrtogonal extends Tanque implements Serializable {
     }
     /**
      * Metodo que devuelve la base del tanque
-     * @param 
      * @return base del tanque
      */
     public double getBase(){
@@ -89,7 +80,6 @@ public class TOrtogonal extends Tanque implements Serializable {
     
     /**
      * Metodo que devuelve el largo del tanque
-     * @param 
      * @return largo del tanque
      */
     public double getLargo(){

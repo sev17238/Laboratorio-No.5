@@ -8,7 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
+ * Clase que representa a todos los tanques del acueducto de Albear; Tanque tambien es la  
+ * clase padre de las clases TCubibo, TCilindrico y TOrtogonal.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -28,6 +29,10 @@ public class Tanque implements Serializable {
     protected double volumentemp;
     protected double volumenminimo;
     
+    /**
+     * Constructor de tanque con todos sus atributos vacios para poder ser almacenado en la base de datos
+     * sin problemas.
+     */
     public Tanque(){
         identificacion = "";
         altura = 0;
@@ -42,18 +47,14 @@ public class Tanque implements Serializable {
      */
     public void setTanque(String identificacion,double altura){
         this.identificacion = identificacion;
-        this.altura = altura;
-        
+        this.altura = altura;        
         //con este ciclo se crea un objeto tipo valvula para cada una de las diez posiciones del array
         for(int i=0;i<valvulas.length;i++){
             Valvula valv = new Valvula();            
             valvulas[i] = valv;
         }        
     }
-    /**
-     * Get id de tanque
-     * @return id
-     */
+    
     public Long getId() {
         return id;
     }
@@ -74,7 +75,7 @@ public class Tanque implements Serializable {
     
     /**
      * Metodo que calcula el estado de cualquier valvula
-     * @param numero de la valvula
+     * @param numvalvula numero de la valvula
      * @return true o false
      */
     public boolean getEstadoAlgunaValvula(int numvalvula){  
@@ -87,7 +88,7 @@ public class Tanque implements Serializable {
     
     /**
      * Metodo que abre las valvulas
-     * @param numero de la valvula
+     * @param numvalvula numero de la valvula
      */
     public void abrirValvulaCualquiera(int numvalvula){        
         valvulas[numvalvula-1].abrirValvula();
@@ -96,7 +97,7 @@ public class Tanque implements Serializable {
    
     /**
      * Metodo que cierra las valvulas
-     * @param numero de valvula
+     * @param numvalvula numero de valvula
      */
     public void cerrarValvulaCualquiera(int numvalvula){
         valvulas[numvalvula-1].cerrarValvula();
@@ -104,8 +105,8 @@ public class Tanque implements Serializable {
     
     /**
      * Metodo que asigna un municipio a una valvula
-     * @param numero valvula 
-     * @param municipio 
+     * @param numvalvula numero valvula 
+     * @param municipio el que le sera asignado a la valvula en cuestion
      */
     public void asignarMunicipioValvulaCualquiera(int numvalvula,String municipio){
         for(int i=0;i<valvulas.length;i++){            

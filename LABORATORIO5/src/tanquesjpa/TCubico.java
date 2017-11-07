@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
+ * Clase que representa a los tanques cubicos del acueducto de Albear.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -22,7 +22,6 @@ public class TCubico extends Tanque implements Serializable {
    
     //atributos
     
-
     @Override
     public Long getId() {
         return id;
@@ -33,7 +32,6 @@ public class TCubico extends Tanque implements Serializable {
         this.id = id;
     }
 
-    
     /**
      * Constructor for objects of class TCubico: Utilizado por la base de datos
      */
@@ -64,7 +62,6 @@ public class TCubico extends Tanque implements Serializable {
         double volumen = super.calcularVolumen(altura);
         return volumen;
     }
-    
     
     @Override
     public int hashCode() {

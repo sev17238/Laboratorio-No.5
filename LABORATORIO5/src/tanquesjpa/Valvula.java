@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
+ * Clase que representa a cada una de las 10 valvulas que tienen los tanques del acueducto de Albear.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -20,16 +20,10 @@ public class Valvula implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
    
-
     //atributos:
     protected boolean estado;
     protected String municipio;
 
-    /**
-     * Metodo que devuelve el id de la valvula
-     * @param 
-     * @return id de valvula
-     */
     public Long getId() {
         return id;
     }
@@ -38,6 +32,62 @@ public class Valvula implements Serializable {
         this.id = id;
     }
 
+     /**
+     * Constructor for objects of class Valvula: Utilizado por la base de datos
+     */
+    public Valvula(){
+        this.estado = false;
+        this.municipio = "";
+    }
+    
+    /**
+     * Metodo que crea un nueva valvula
+     * @param  estado de la valvula
+     * @param municipio de la valvula
+     */
+    public Valvula(boolean estado, String municipio){
+        this.estado = estado;
+        this. municipio = municipio;
+    }
+    
+    /**
+     * Metodo que devuelve el estado de la valvula
+     * @return estado 
+     */
+    public boolean getEstado(){
+        return estado;
+    }
+    
+    /**
+     * Metodo que devuelve el municipio al que pertenece la valvula
+     * @return municipio
+     */
+    public String getMunicipio(){
+        return municipio;
+    }
+    
+    /**
+     * Metodo que asigna un nombre al atributo municipio de la valvula en cuestion 
+     * @param municipio al que pertenece la valvula
+     */
+    public void asignarMunicipio(String municipio){
+        this.municipio = municipio;
+    }
+    
+    /**
+     * Metodo que abre la valvula
+     */
+    public void abrirValvula(){
+        estado = true;
+    }
+    
+    /**
+     * Metodo que cierra la valvula
+     */
+    public void cerrarValvula(){
+        estado = false;
+    }    
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -61,64 +111,5 @@ public class Valvula implements Serializable {
     @Override
     public String toString() {
         return "tanquesjpa.Valvula[ id=" + id + " ]";
-    }
-    
-    /**
-     * Constructor for objects of class Valvula: Utilizado por la base de datos
-     */
-    public Valvula(){
-        this.estado = false;
-        this.municipio = "";
-    }
-    /**
-     * Metodo que crea un nueva valvula
-     * @param  estado de la valvula
-     * @param municipio de la valvula
-     * @return 
-     */
-    public Valvula(boolean estado, String municipio){
-        this.estado = estado;
-        this. municipio = municipio;
-    }
-    
-    /**
-     * Metodo que devuelve el estado de la valvula
-     * @param 
-     * @return estado 
-     */
-    public boolean getEstado(){
-        return estado;
-    }
-    
-    /**
-     * Metodo que devuelve el municipio al que pertenece la valvula
-     * @param 
-     * @return municipio
-     */
-    public String getMunicipio(){
-        return municipio;
-    }
-    
-    /**
-     * Metodo que asigna un nombre al atributo municipio de la valvula en cuestion 
-     * @param municipio al que pertenece la valvula
-     * @return 
-     */
-    public void asignarMunicipio(String municipio){
-        this.municipio = municipio;
-    }
-    
-    /**
-     * Metodo que abre la valvula
-     */
-    public void abrirValvula(){
-        estado = true;
-    }
-    
-    /**
-     * Metodo que cierra la valvula
-     */
-    public void cerrarValvula(){
-        estado = false;
-    }
+    }   
 }

@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * 
+ * Clase que representa a los tanques cilindricos del acueducto de albear.
  * @author MarianaMorales17235
  * @author DiegoSevilla17238
  */
@@ -40,8 +40,7 @@ public class TCilindrico extends Tanque implements Serializable {
      */
     public TCilindrico(){
         super.setTanque("", 0);
-        this.radio = 0;
-        
+        this.radio = 0;        
     }
     
      /**
